@@ -1,0 +1,39 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  padding: 0;
+  margin: 0;
+  background-color: white;
+}
+
+.partie-skills{
+  width: 50%;
+  margin: 0 auto;
+
+  h3{
+    margin-bottom: 10px;
+  }
+
+  ul{
+    padding-left: 0;
+    padding-bottom: 20px;
+    margin: 0px 0px 10px; 
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    height: 75px;
+
+    li{
+      list-style: none;
+      margin: 0px 15px;
+      padding: 0;
+      justify-content: center;
+      
+      
+    }
+  }
+}
+
