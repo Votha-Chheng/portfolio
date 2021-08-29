@@ -1,77 +1,133 @@
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
   padding: 0;
   margin: 0;
-  background-color: white;
+  background-color: black;
+  color: white;
+}
+
+.folder {
+  position: fixed;
+  width: 90%;
+  height: 90%;
+  top: 50%;
+  left: 50%;
+  background-color: whitesmoke;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+          transform: translate3d(-50%, -50%, 0);
+  mix-blend-mode: difference;
 }
 
 .partie-skills {
   width: 50%;
   margin: 0 auto;
 }
+
 .partie-skills h3 {
   margin: 50px 0 0;
 }
+
 .partie-skills ul {
   padding-left: 0;
   margin: 0px 0px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   height: auto;
 }
+
 .partie-skills ul li {
   list-style: none;
   margin: 10px 15px;
   padding: 0;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.portrait {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.portrait img {
+  border: 5px solid black;
+  -webkit-filter: brightness(150%);
+          filter: brightness(150%);
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
 }
 
 .cube-wrapper {
-  width: 300px;
-  height: 300px;
-  border: 1px solid black;
+  width: 900px;
+  height: 900px;
   margin: 50px auto;
-  perspective: 900px;
-  perspective-origin: 50%;
+  -webkit-perspective: 1500px;
+          perspective: 1500px;
+  -webkit-perspective-origin: 50% -10%;
+          perspective-origin: 50% -10%;
 }
+
 .cube-wrapper .cube {
-  width: 300px;
-  height: 300px;
+  width: 900px;
+  height: 900px;
   position: relative;
-  transform-style: preserve-3d;
-  transform-origin: 50%;
-  transform: rotateY(-90deg);
-  transition: all 1s ease-out;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform-origin: 50%;
+          transform-origin: 50%;
+  -webkit-transition: all 0.9s cubic-bezier(0.19, 0.92, 0.61, 1.38);
+  transition: all 0.9s cubic-bezier(0.19, 0.92, 0.61, 1.38);
 }
+
 .cube-wrapper .cube div {
   position: absolute;
-  width: 300px;
-  height: 300px;
+  width: 900px;
+  height: 900px;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
+
 .cube-wrapper .cube .front {
-  border: 1px solid blue;
-  transform: translate3d(0, 0, 150px);
-  background-color: rgba(0, 0, 255, 0.322);
+  -webkit-transform: translate3d(0, 0, 450px);
+          transform: translate3d(0, 0, 450px);
+  background-color: white;
 }
+
 .cube-wrapper .cube .left {
-  transform-origin: center right;
-  transform: translate3d(-300px, 0, 150px) rotateY(-90deg);
+  -webkit-transform-origin: center right;
+          transform-origin: center right;
+  -webkit-transform: translate3d(-900px, 0, 450px) rotateY(-90deg);
+          transform: translate3d(-900px, 0, 450px) rotateY(-90deg);
   border: 1px solid red;
-  background-color: rgba(255, 0, 0, 0.438);
+  background-color: red;
 }
+
 .cube-wrapper .cube .right {
-  transform-origin: center left;
-  transform: translate3d(300px, 0, 150px) rotateY(90deg);
+  -webkit-transform-origin: center left;
+          transform-origin: center left;
+  -webkit-transform: translate3d(900px, 0, 450px) rotateY(90deg);
+          transform: translate3d(900px, 0, 450px) rotateY(90deg);
   border: 1px solid green;
-  background-color: rgba(0, 128, 0, 0.493);
+  background-color: green;
 }
+
 .cube-wrapper .cube .back {
-  transform: translate3d(0, 0, -150px) rotateY(180deg);
+  -webkit-transform: translate3d(0, 0, -450px) rotateY(180deg);
+          transform: translate3d(0, 0, -450px) rotateY(180deg);
   border: 1px solid yellow;
-  background-color: rgba(255, 255, 0, 0.493);
-}/*# sourceMappingURL=main.css.map */
+  background-color: yellow;
+}
+/*# sourceMappingURL=main.css.map */
