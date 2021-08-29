@@ -30,4 +30,49 @@ body {
   margin: 0px 15px;
   padding: 0;
   justify-content: center;
+}
+
+.cube-wrapper {
+  width: 300px;
+  height: 300px;
+  border: 1px solid black;
+  margin: 50px auto;
+  perspective: 900px;
+  perspective-origin: 50%;
+}
+.cube-wrapper .cube {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform-origin: 50%;
+  transform: rotateY(-90deg);
+  transition: all 1s ease-out;
+}
+.cube-wrapper .cube div {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+}
+.cube-wrapper .cube .front {
+  border: 1px solid blue;
+  transform: translate3d(0, 0, 150px);
+  background-color: rgba(0, 0, 255, 0.322);
+}
+.cube-wrapper .cube .left {
+  transform-origin: center right;
+  transform: translate3d(-300px, 0, 150px) rotateY(-90deg);
+  border: 1px solid red;
+  background-color: rgba(255, 0, 0, 0.438);
+}
+.cube-wrapper .cube .right {
+  transform-origin: center left;
+  transform: translate3d(300px, 0, 150px) rotateY(90deg);
+  border: 1px solid green;
+  background-color: rgba(0, 128, 0, 0.493);
+}
+.cube-wrapper .cube .back {
+  transform: translate3d(0, 0, -150px) rotateY(180deg);
+  border: 1px solid yellow;
+  background-color: rgba(255, 255, 0, 0.493);
 }/*# sourceMappingURL=main.css.map */
