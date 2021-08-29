@@ -1,6 +1,5 @@
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -13,35 +12,22 @@ body {
   width: 50%;
   margin: 0 auto;
 }
-
 .partie-skills h3 {
   margin-bottom: 10px;
 }
-
 .partie-skills ul {
   padding-left: 0;
   padding-bottom: 20px;
   margin: 0px 0px 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
   height: 75px;
 }
-
 .partie-skills ul li {
   list-style: none;
   margin: 0px 15px;
   padding: 0;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-/*# sourceMappingURL=main.css.map */
+  justify-content: center;
+}/*# sourceMappingURL=main.css.map */
