@@ -1,6 +1,5 @@
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -17,117 +16,135 @@ body {
   top: 50%;
   left: 50%;
   background-color: whitesmoke;
-  -webkit-transform: translate3d(-50%, -50%, 0);
-          transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
   mix-blend-mode: difference;
 }
 
-.partie-skills {
-  width: 50%;
-  margin: 0 auto;
+.trait {
+  width: 100vw;
+  height: 2px;
+  background-color: white;
+  margin-left: -6.25vw;
 }
 
-.partie-skills h3 {
-  margin: 50px 0 0;
+main {
+  margin: 0px auto;
+  width: 90%;
 }
-
-.partie-skills ul {
-  padding-left: 0;
-  margin: 0px 0px 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  height: auto;
+main .titre-h1 {
+  position: relative;
+  height: 5.5rem;
+  margin-top: 30px;
 }
-
-.partie-skills ul li {
-  list-style: none;
-  margin: 10px 15px;
-  padding: 0;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+main .titre-h1 h1 {
+  margin: 0;
+  position: absolute;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 5.5rem;
+  font-variant: small-caps;
+  top: 0;
+  left: -36px;
+  letter-spacing: 1.75px;
+  line-height: 5rem;
+}
+main .titre-h2 {
+  position: relative;
+  height: 4.25rem;
+  background-color: white;
+  width: 45%;
+  margin-left: 1px;
+  padding-left: 1px;
+}
+main .titre-h2 h2 {
+  margin: 0;
+  mix-blend-mode: difference;
+  position: absolute;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 2.5rem;
+  font-variant: small-caps;
+  font-weight: bolder;
+  letter-spacing: 2px;
+}
+main .titre-h2 h2.normal {
+  -webkit-text-stroke: 1px white;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  color: transparent;
+  overflow-wrap: normal;
 }
 
 .portrait {
-  width: 600px;
-  margin: 0 auto;
-}
-
-.portrait img {
-  border: 5px solid black;
-  -webkit-filter: brightness(150%);
-          filter: brightness(150%);
-  -webkit-filter: invert(100%);
-          filter: invert(100%);
-}
-
-.cube-wrapper {
-  width: 900px;
-  height: 900px;
-  margin: 50px auto;
-  -webkit-perspective: 1500px;
-          perspective: 1500px;
-  -webkit-perspective-origin: 50% -10%;
-          perspective-origin: 50% -10%;
-}
-
-.cube-wrapper .cube {
-  width: 900px;
-  height: 900px;
+  width: 350px;
+  height: 350px;
+  margin: 20px auto;
   position: relative;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-transform-origin: 50%;
-          transform-origin: 50%;
-  -webkit-transition: all 0.9s cubic-bezier(0.19, 0.92, 0.61, 1.38);
-  transition: all 0.9s cubic-bezier(0.19, 0.92, 0.61, 1.38);
+  overflow: hidden;
+  border: 5px solid white;
 }
-
-.cube-wrapper .cube div {
+.portrait img {
   position: absolute;
-  width: 900px;
-  height: 900px;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  filter: brightness(175%) invert(100%);
+  top: -75px;
+  left: -20px;
 }
 
-.cube-wrapper .cube .front {
-  -webkit-transform: translate3d(0, 0, 450px);
-          transform: translate3d(0, 0, 450px);
+.partie-skills {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  overflow: hidden;
+}
+.partie-skills h3 {
+  margin: 50px 0 0;
+}
+.partie-skills ul.skills {
+  padding: 20px;
+  margin: 0px 0px 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.partie-skills ul.skills.front, .partie-skills ul.skills.others {
+  width: 40%;
+}
+.partie-skills ul.skills.back {
+  width: 20%;
+  position: relative;
+}
+.partie-skills ul.skills.back::before {
+  top: 0;
+  left: 0;
+}
+.partie-skills ul.skills.back::after {
+  top: 0;
+  right: 0;
+}
+.partie-skills ul.skills.back::before, .partie-skills ul.skills.back::after {
+  width: 2px;
+  height: 100%;
+  position: absolute;
+  content: "";
   background-color: white;
 }
-
-.cube-wrapper .cube .left {
-  -webkit-transform-origin: center right;
-          transform-origin: center right;
-  -webkit-transform: translate3d(-900px, 0, 450px) rotateY(-90deg);
-          transform: translate3d(-900px, 0, 450px) rotateY(-90deg);
-  border: 1px solid red;
-  background-color: red;
+.partie-skills ul.skills li {
+  list-style: none;
+  margin: 10px 15px;
+  padding: 0;
+  justify-content: center;
+}
+.partie-skills ul.skills li img {
+  filter: invert(100%);
 }
 
-.cube-wrapper .cube .right {
-  -webkit-transform-origin: center left;
-          transform-origin: center left;
-  -webkit-transform: translate3d(900px, 0, 450px) rotateY(90deg);
-          transform: translate3d(900px, 0, 450px) rotateY(90deg);
-  border: 1px solid green;
-  background-color: green;
-}
-
-.cube-wrapper .cube .back {
-  -webkit-transform: translate3d(0, 0, -450px) rotateY(180deg);
-          transform: translate3d(0, 0, -450px) rotateY(180deg);
-  border: 1px solid yellow;
-  background-color: yellow;
-}
-/*# sourceMappingURL=main.css.map */
+.text-overlay {
+  color: red;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-animation: roll 5s infinite;
+          animation: roll 5s infinite;
+  z-index: 2;
+}/*# sourceMappingURL=main.css.map */

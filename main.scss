@@ -2,12 +2,13 @@
   box-sizing: border-box;
 }
 
+$font-h1 : 'Open Sans Condensed', sans-serif;
+
 body{
   padding: 0;
   margin: 0;
   background-color: black;
-  color:white;
-  
+  color:white; 
 }
 
 .folder{
@@ -20,92 +21,196 @@ body{
   transform: translate3d(-50%, -50%, 0);
   mix-blend-mode: difference;
 }
+.trait{
+  width: 100vw;
+  height: 2px;
+  background-color: white;
+  margin-left: -6.25vw;
+}
+main{
+  margin: 0px auto;
+  width: 90%;
+  
+  .titre-h1{
+    position: relative;
+    height: 5.5rem;
+    margin-top: 30px;
+
+    h1{
+      margin: 0;
+      position: absolute;
+      font-family : $font-h1 ;
+      font-size: 5.5rem;
+      font-variant: small-caps;
+      top: 0;
+      left:-36px;
+      letter-spacing: 1.75px;
+      line-height: 5rem;
+    }
+  }
+  .titre-h2{
+    position: relative;
+    height: 4.25rem;
+    background-color: white;
+    width: 45%;
+    margin-left: 1px;
+    padding-left: 1px;
+    
+    h2{
+      margin: 0;
+      mix-blend-mode: difference;
+      position: absolute;
+      font-family : $font-h1 ;
+      font-size: 2.5rem;
+      font-variant: small-caps;
+      font-weight: bolder;
+      letter-spacing: 2px; 
+      
+    }
+    h2.normal{
+      -webkit-text-stroke :1px white;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      color:transparent;
+      overflow-wrap:normal;
+    }
+  }
+}
+.portrait{
+  width: 350px;
+  height: 350px;
+  margin: 20px auto;
+  position: relative;
+  overflow: hidden;
+  border: 5px solid white;
+
+  img{
+    position: absolute;
+    
+    filter: brightness(175%) invert(100%);
+    top:-75px;
+    left: -20px;
+  }  
+
+}
 
 .partie-skills{
-  width: 50%;
+  width: 100%;
   margin: 0 auto;
+  display: flex;
+  overflow: hidden;
 
   h3{
     margin: 50px 0 0;
   }
 
-  ul{
-    padding-left: 0;
+  ul.skills{
+    padding: 20px;
     margin: 0px 0px 10px; 
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: flex-start;
-    height: auto;
+    justify-content: center;
+
+    &.front, &.others{
+      width: 40%;
+    }
+    &.back{
+      width: 20%;
+      position: relative;
+
+      &::before{
+        top:0;
+        left: 0;
+      }
+      &::after{
+        top: 0;
+        right: 0;
+      }
+
+      &::before, &::after{
+        width:2px;
+        height: 100%;
+        position: absolute;
+        content: "";
+        background-color: white;
+        //transform: translateY(-100%);
+      }
+    }
 
     li{
       list-style: none;
       margin: 10px 15px;
       padding: 0;
       justify-content: center;
-    }
-  }
-}
-
-.portrait{
-  width: 600px;
-  margin: 0 auto;
-
-  img{
-    border: 5px solid black;
-    filter: brightness(150%);
-    filter: invert(100%);
-  }
-  
-}
-
-.cube-wrapper{
-  width: 900px;
-  height: 900px;
-  margin: 50px auto;
-  perspective: 1500px;
-  perspective-origin:50% -10%;
-  
-  .cube{
-    //border: 1px solid black;
-    width: 900px;
-    height: 900px;
-    position: relative;
-    transform-style: preserve-3d;
-    transform-origin: 50%;
-    transition: all 0.9s cubic-bezier(.19,.92,.61,1.38);
-    
-
-    div{
-      position: absolute;
-      width: 900px;
-      height: 900px;
-      backface-visibility: hidden;
-    }
-
-    .front{
-      //border: 1px solid blue;
-      transform: translate3d(0, 0, 450px);
-      background-color: rgb(255, 255, 255);
       
-    }
-    .left{
-      transform-origin: center right;
-      transform:translate3d(-900px, 0, 450px) rotateY(-90deg);
-      border: 1px solid red;
-      background-color: rgb(255, 0, 0);
-    }
-    .right{
-      transform-origin: center left;
-      transform: translate3d(900px, 0, 450px) rotateY(90deg);
-      border: 1px solid green;
-      background-color: rgb(0, 128, 0);
-    }
-    .back{
-      transform: translate3d(0, 0, -450px) rotateY(180deg);
-      border: 1px solid yellow;
-      background-color: rgb(255, 255, 0);
+      img{
+        filter: invert(100%);
+      }
     }
   }
 }
+.text-overlay{
+  color: red;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  animation: roll 5s infinite ;
+  z-index: 2;
+}
+
+// @keyframes roll{
+//   to{
+//     transform: translateX(-200%);
+//   }
+// }
+
+// .cube-wrapper{
+//   width: 900px;
+//   height: 900px;
+//   margin: 50px auto;
+//   perspective: 1500px;
+//   perspective-origin:50% -10%;
+  
+//   .cube{
+//     width: 900px;
+//     height: 900px;
+//     position: relative;
+//     transform-style: preserve-3d;
+//     transform-origin: 50%;
+//     transition: all 0.9s cubic-bezier(.19,.92,.61,1.38);
+    
+//     div{
+//       position: absolute;
+//       width: 900px;
+//       height: 900px;
+//       backface-visibility: hidden;
+//     }
+
+//     .front{
+//       transform: translate3d(0, 0, 450px);
+//       background-color: rgb(255, 255, 255);
+      
+//     }
+//     .left{
+//       transform-origin: center right;
+//       transform:translate3d(-900px, 0, 450px) rotateY(-90deg);
+//       border: 1px solid red;
+//       background-color: rgb(255, 0, 0);
+//     }
+//     .right{
+//       transform-origin: center left;
+//       transform: translate3d(900px, 0, 450px) rotateY(90deg);
+//       border: 1px solid green;
+//       background-color: rgb(0, 128, 0);
+//     }
+//     .back{
+//       transform: translate3d(0, 0, -450px) rotateY(180deg);
+//       border: 1px solid yellow;
+//       background-color: rgb(255, 255, 0);
+//     }
+//   }
+// }
 
