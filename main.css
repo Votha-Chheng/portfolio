@@ -7,6 +7,35 @@ body {
   margin: 0;
   background-color: black;
   color: white;
+  position: relative;
+}
+
+#scrollbar {
+  height: 100vh;
+  width: 1vw;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  transition: all 2s 1.2s ease-out;
+}
+#scrollbar:hover {
+  transition: all 0.5s ease-out;
+  opacity: 1;
+}
+#scrollbar:hover #scroll-container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+#scrollbar:hover #scroll-container #scroll-thumb {
+  position: absolute;
+  right: 0;
+  width: 50%;
+  border-radius: 4vw;
+  background-color: rgba(128, 128, 128, 0.315);
+  transition: all 2s ease-out;
 }
 
 .folder {
@@ -18,6 +47,7 @@ body {
   background-color: whitesmoke;
   transform: translate3d(-50%, -50%, 0);
   mix-blend-mode: difference;
+  border-radius: 15px;
 }
 
 .trait {
@@ -34,7 +64,7 @@ main {
 main .titre-h1 {
   position: relative;
   height: 5.5rem;
-  margin-top: 30px;
+  margin-top: 45px;
 }
 main .titre-h1 h1 {
   margin: 0;
@@ -51,11 +81,12 @@ main .titre-h2 {
   position: relative;
   height: 4.25rem;
   background-color: white;
-  width: 45%;
+  width: 480px;
   margin-left: 1px;
   padding-left: 1px;
+  border-radius: 0 15px 15px 0;
 }
-main .titre-h2 h2 {
+main .titre-h2 h2.normal {
   margin: 0;
   mix-blend-mode: difference;
   position: absolute;
@@ -64,25 +95,41 @@ main .titre-h2 h2 {
   font-variant: small-caps;
   font-weight: bolder;
   letter-spacing: 2px;
-}
-main .titre-h2 h2.normal {
+  top: 2.5px;
   -webkit-text-stroke: 1px white;
   z-index: 1;
-  top: 0;
-  left: 0;
   color: transparent;
-  overflow-wrap: normal;
 }
 
-.portrait {
+.portrait-container {
+  position: relative;
+  height: 100%;
+}
+.portrait-container .portfolio-titre {
+  width: 50%;
+  height: 350px;
+  position: absolute;
+  content: "";
+  top: 50%;
+  right: 0px;
+  transform: translateY(-50%);
+  background-color: white;
+  border-radius: 15px 0 0 15px;
+}
+.portrait-container .portfolio-titre h3 {
+  color: #046004;
+  text-align: right;
+}
+.portrait-container .portrait {
   width: 350px;
   height: 350px;
   margin: 20px auto;
   position: relative;
   overflow: hidden;
   border: 5px solid white;
+  border-radius: 15px;
 }
-.portrait img {
+.portrait-container .portrait img {
   position: absolute;
   filter: brightness(175%) invert(100%);
   top: -75px;
@@ -94,13 +141,20 @@ main .titre-h2 h2.normal {
   margin: 0 auto;
   display: flex;
   overflow: hidden;
+  position: relative;
 }
-.partie-skills h3 {
-  margin: 50px 0 0;
+.partie-skills::after {
+  width: 100vw;
+  height: 0px;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: "";
 }
 .partie-skills ul.skills {
   padding: 20px;
-  margin: 0px 0px 10px;
+  margin: 0px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
