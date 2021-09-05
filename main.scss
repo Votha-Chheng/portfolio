@@ -11,10 +11,17 @@ body{
   position: relative;
 }
 .portrait-container{
-  mix-blend-mode: overlay;
+  position: relative;
   width: 100vh;
   margin: 0 auto;
 
+  .grid-container{
+    display: grid;
+    width: 100vh;
+    height: 100vh;
+    
+  }
+  
   img{
     filter: brightness(200%) contrast(125%);
   }

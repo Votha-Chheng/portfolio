@@ -15,7 +15,7 @@ body{
 #frame-a4{
     width: 21cm;
     height: 29.7cm;
-    margin: 10px auto;
+    margin: 0px auto;
     background-color: white;
     padding : 0.2cm 0.1cm 0.2cm 0.45cm;
     display: flex ;
@@ -413,7 +413,7 @@ aside{
 
 //*************** Responsive *************
 
-@media (max-width:820px){
+@media screen and (max-width:820px){
 
     #frame-a4{
         width: 360px;
@@ -422,6 +422,7 @@ aside{
         flex-direction: column-reverse;
         padding: 0;
         background-color: #32213A;
+        //margin: 0;
 
         main{
             padding: 10px 7.5px;

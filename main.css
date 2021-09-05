@@ -1,5 +1,6 @@
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -10,15 +11,25 @@ body {
 }
 
 .portrait-container {
-  mix-blend-mode: overlay;
+  position: relative;
   width: 100vh;
   margin: 0 auto;
 }
+
+.portrait-container .grid-container {
+  display: -ms-grid;
+  display: grid;
+  width: 100vh;
+  height: 100vh;
+}
+
 .portrait-container img {
-  filter: brightness(200%) contrast(125%);
+  -webkit-filter: brightness(200%) contrast(125%);
+          filter: brightness(200%) contrast(125%);
 }
 
 .cv-container {
   margin: 0 auto;
   width: 200px;
-}/*# sourceMappingURL=main.css.map */
+}
+/*# sourceMappingURL=main.css.map */
