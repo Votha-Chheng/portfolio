@@ -2,8 +2,7 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -17,8 +16,6 @@ body {
   margin: 0px auto;
   background-color: white;
   padding: 0.2cm 0.1cm 0.2cm 0.45cm;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   overflow: hidden;
 }
@@ -26,11 +23,9 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-  -webkit-filter: brightness(120%);
-          filter: brightness(120%);
+  filter: brightness(120%);
   font-weight: bold;
 }
-
 a:hover {
   color: mediumblue;
 }
@@ -39,12 +34,10 @@ main {
   margin-right: 12.5;
   width: 598px;
 }
-
 main .item {
   margin-bottom: 9px;
   width: 585px;
 }
-
 main h2 {
   margin-top: 0;
   margin-bottom: 5px;
@@ -53,7 +46,6 @@ main h2 {
   font-size: 1.25rem;
   position: relative;
 }
-
 main h2::after {
   content: "";
   position: absolute;
@@ -63,7 +55,6 @@ main h2::after {
   bottom: 0;
   left: 0;
 }
-
 main p {
   text-align: justify;
   text-indent: 0.5cm;
@@ -72,7 +63,6 @@ main p {
   font-family: "Roboto Condensed", sans-serif;
   font-size: 0.95rem;
 }
-
 main ul.conteneur-experiences {
   margin: 0 auto;
   padding: 0;
@@ -81,63 +71,41 @@ main ul.conteneur-experiences {
   font-size: 1rem;
   line-height: 1.25rem;
 }
-
 main ul.conteneur-experiences li {
   list-style-type: none;
   margin-left: 0;
   margin-bottom: 12px;
 }
-
 main ul.conteneur-experiences li a {
-  -webkit-filter: brightness(120%);
-          filter: brightness(120%);
+  filter: brightness(120%);
   font-weight: bold;
 }
-
 main ul.conteneur-experiences li img {
   margin-right: 5px;
   padding-right: 5px;
 }
-
 main ul.conteneur-experiences li .lieu-poste {
   margin-left: 40px;
   line-height: 1.25rem;
   font-style: italic;
 }
-
 main ul.conteneur-experiences li .partie-haute {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: flex-end;
+  align-items: center;
 }
-
 main ul.conteneur-experiences li .partie-haute .poste .poste-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  align-items: flex-end;
   font-weight: bold;
 }
-
 main ul.conteneur-experiences li .partie-haute .date {
   color: grey;
 }
-
 main ul.conteneur-experiences li .description ul {
   padding-left: 5px;
 }
-
 main ul.conteneur-experiences li .description li {
   list-style-type: none;
   margin-bottom: 5px;
@@ -149,19 +117,16 @@ main ul.conteneur-experiences li .description li {
   line-height: 1.1rem;
   width: 100%;
 }
-
 main ul.conteneur-experiences li .description li:before {
   position: absolute;
   left: -5px;
   content: "▹";
   z-index: 2;
 }
-
 main ul.conteneur-experiences li .description li .front-back {
   font-weight: bold;
   line-height: 1.6rem;
 }
-
 main ul.conteneur-experiences li .description li .tag {
   display: inline-block;
   border: 2px solid grey;
@@ -169,49 +134,31 @@ main ul.conteneur-experiences li .description li .tag {
   border-radius: 3px;
   line-height: 1.1rem;
 }
-
 main ul.conteneur-diplome {
   margin: 0;
   padding: 0;
 }
-
 main ul.conteneur-diplome li.flex-diplome {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   margin-bottom: 5px;
 }
-
 main ul.conteneur-diplome li.flex-diplome .img-box {
   margin: 0 7.5px;
   width: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
-
 main ul.conteneur-diplome li.flex-diplome .box-texte {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   font-family: "Roboto Condensed", sans-serif;
   font-size: 0.95rem;
 }
-
 main ul.conteneur-diplome li.flex-diplome .box-texte .nom-diplome {
   font-weight: bold;
 }
-
 main ul.conteneur-diplome li.flex-diplome .box-texte .date-diplome {
   color: grey;
 }
@@ -221,13 +168,11 @@ aside {
   background-color: #382541;
   width: 170px;
 }
-
 aside #id-container {
   margin: 0 auto;
   width: 170px;
   text-align: center;
 }
-
 aside #id-container .head-id {
   color: whitesmoke;
   background-color: #32213a;
@@ -235,20 +180,16 @@ aside #id-container .head-id {
   margin: 0 auto;
   border-bottom: 5px solid whitesmoke;
 }
-
 aside #id-container .head-id .job {
   display: block;
 }
-
 aside #id-container .head-id .job-responsive {
   display: none;
 }
-
 aside #id-container .head-id img {
   border-radius: 50%;
   border: 2px double white;
 }
-
 aside #id-container .head-id h1 {
   margin-top: 0;
   font-family: "Roboto Condensed", sans-serif;
@@ -257,20 +198,17 @@ aside #id-container .head-id h1 {
   font-family: "Oswald", serif;
   letter-spacing: 1px;
 }
-
 aside #id-container .head-id h2 {
   font-family: "Roboto Condensed", sans-serif;
   font-size: 0.9rem;
   letter-spacing: 0.5px;
 }
-
 aside #id-container .head-id h4.ville {
   font-family: "Roboto Condensed", sans-serif;
   font-weight: 100;
   font-size: 0.85rem;
   margin: 5px 0px;
 }
-
 aside #id-container .bottom-id {
   background-color: #7b7283;
   text-align: left;
@@ -279,86 +217,59 @@ aside #id-container .bottom-id {
   color: whitesmoke;
   border-bottom: 5px solid whitesmoke;
 }
-
 aside #id-container .bottom-id .qrcode-responsive {
   display: none;
 }
-
 aside #id-container .bottom-id .info-content.last {
   margin-bottom: 0;
 }
-
 aside #id-container .bottom-id .info-content.last a {
   height: 25px;
 }
-
 aside #id-container .bottom-id .info-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin: 0px 0px 10px;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
-
 aside #id-container .bottom-id .info-content div {
   height: 25px;
 }
-
 aside #id-container .bottom-id .info-content div.tel {
   height: 20px;
 }
-
 aside #id-container .bottom-id .info-content div.mail {
   height: 16px;
 }
-
 aside #id-container .bottom-id .info-content a {
   font-weight: normal;
-  -webkit-transition: color 0.2s ease-out;
   transition: color 0.2s ease-out;
 }
-
 aside #id-container .bottom-id .info-content img:not(.qrcode) {
   line-height: 0.1rem;
 }
-
 aside #id-container .bottom-id .info-content img:not(.qrcode):hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-  -webkit-transition: -webkit-transform 0.2s ease-out;
-  transition: -webkit-transform 0.2s ease-out;
+  transform: scale(1.2);
   transition: transform 0.2s ease-out;
-  transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
 }
-
 aside #id-container .bottom-id .info-content img.qrcode {
   margin-top: -5px;
 }
-
 aside #id-container .bottom-id .info-content span.info {
   font-family: "Roboto Condensed", sans-serif;
   font-size: 0.85rem;
   letter-spacing: 0.25px;
 }
-
 aside #id-container .bottom-id .info-content span.portfolio {
   margin: -5px 0 5px 0;
 }
-
 aside #id-container .id-soft-skills {
   background-color: #32213A;
   color: whitesmoke;
   text-align: left;
   padding: 7.5px;
 }
-
 aside #id-container .id-soft-skills h3 {
   font-family: "Oswald", serif;
   font-size: 1.25rem;
@@ -366,35 +277,25 @@ aside #id-container .id-soft-skills h3 {
   margin: 2.5px 0 3.5px;
   font-weight: 400;
 }
-
 aside #id-container .id-soft-skills div {
   font-family: "Roboto Condensed", sans-serif;
   font-size: 0.9rem;
 }
-
 aside #id-container .id-soft-skills .langages {
   margin-bottom: 5px;
 }
-
 aside #id-container .id-soft-skills .langages span.techno {
   border: 1px solid white;
   line-height: 1.5rem;
   padding: 1.75px;
   border-radius: 3px;
 }
-
 aside #id-container .id-soft-skills .logiciels {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   margin-bottom: 5px;
 }
-
 aside #id-container .id-soft-skills .logiciels div {
   padding: 1px 1.75px;
   background-color: whitesmoke;
@@ -403,7 +304,6 @@ aside #id-container .id-soft-skills .logiciels div {
   margin: 0 7.5px 5px;
   font-weight: bold;
 }
-
 aside #id-container .id-soft-skills .logiciels div::before {
   content: "";
   position: absolute;
@@ -415,7 +315,6 @@ aside #id-container .id-soft-skills .logiciels div::before {
   width: 10px;
   height: 100%;
 }
-
 aside #id-container .id-soft-skills .logiciels div::after {
   content: "";
   width: 5px;
@@ -424,56 +323,43 @@ aside #id-container .id-soft-skills .logiciels div::after {
   position: absolute;
   top: 50%;
   left: -5px;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   border-radius: 50%;
 }
-
 aside #id-container .id-soft-skills .langues {
   margin-bottom: 5px;
 }
-
 aside #id-container .id-soft-skills .langues .langue-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 100%;
 }
-
 aside #id-container .id-soft-skills .langues .langue-content .langue {
   overflow: hidden;
   width: 100px;
 }
-
 aside #id-container .id-soft-skills .langues .langue-content .level {
   background-color: whitesmoke;
   width: 135px;
   height: 12.5px;
   border-radius: 2.5px;
 }
-
 aside #id-container .id-soft-skills .langues .langue-content .level div {
   border-radius: 2.5px 0px 0px 2.5px;
   background-color: #74b3ce;
   height: 100%;
 }
-
 aside #id-container .id-soft-skills .langues .langue-content .level .excellent {
   width: 95%;
 }
-
 aside #id-container .id-soft-skills .langues .langue-content .level .mid {
   width: 70%;
 }
-
 aside #id-container .id-soft-skills .langues .langue-content .level .low {
   width: 40%;
 }
-
 aside #id-container .id-soft-skills .langues .langue-content .level.good {
   background-color: #74b3ce;
 }
-
 aside #id-container .id-soft-skills .hobbies {
   padding-bottom: 7.5px;
 }
@@ -483,10 +369,7 @@ aside #id-container .id-soft-skills .hobbies {
     width: 360px;
     height: auto;
     overflow: hidden;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
+    flex-direction: column-reverse;
     padding: 0;
     background-color: #32213A;
   }
@@ -512,8 +395,7 @@ aside #id-container .id-soft-skills .hobbies {
     width: 215px;
   }
   #frame-a4 main .item .conteneur-experiences li .experience .partie-haute .poste .poste-content img {
-    -ms-flex-item-align: start;
-        align-self: flex-start;
+    align-self: flex-start;
     margin-top: 2px;
   }
   #frame-a4 main .item .conteneur-experiences li .experience .partie-haute .poste .poste-content span {
@@ -521,8 +403,7 @@ aside #id-container .id-soft-skills .hobbies {
   }
   #frame-a4 main .item .conteneur-experiences li .experience .partie-haute .date {
     width: 125px;
-    -ms-flex-item-align: start;
-        align-self: flex-start;
+    align-self: flex-start;
     text-align: right;
   }
   #frame-a4 main .item .conteneur-experiences li .experience .lieu-poste {
@@ -565,31 +446,18 @@ aside #id-container .id-soft-skills .hobbies {
     display: none;
   }
   #frame-a4 aside #id-container .head-id .job-responsive {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    flex-direction: row;
+    justify-content: center;
     display: block;
   }
   #frame-a4 aside #id-container .head-id .job-responsive h2 {
     margin: 0 5px;
   }
   #frame-a4 aside #id-container .bottom-id {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    justify-content: space-between;
+    align-items: center;
     padding: 20px 0px;
     border-radius: 15px;
     border-top: 5px solid white;
@@ -606,10 +474,7 @@ aside #id-container .id-soft-skills .hobbies {
     height: auto;
   }
   #frame-a4 aside #id-container .bottom-id .one-line-info .info-content {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
   }
   #frame-a4 aside #id-container .bottom-id .one-line-info .info-content div:first-child {
     width: 50px;
@@ -633,9 +498,7 @@ aside #id-container .id-soft-skills .hobbies {
     line-height: 2rem;
   }
   #frame-a4 aside #id-container .id-soft-skills .logiciels {
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    justify-content: flex-start;
   }
   #frame-a4 aside #id-container .id-soft-skills .logiciels div {
     font-size: 1.1rem;
@@ -646,5 +509,4 @@ aside #id-container .id-soft-skills .hobbies {
   #frame-a4 aside #id-container .id-soft-skills .hobbies span {
     font-size: 1rem;
   }
-}
-/*# sourceMappingURL=cv.css.map */
+}/*# sourceMappingURL=cv.css.map */
