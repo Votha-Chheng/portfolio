@@ -21,13 +21,14 @@ body{
   }
 }
 .grid-container{
-  width: 100vh;
+  width: 80vh;
   height: 100vh;
   position: relative;
   margin: 0px auto;
+  overflow: hidden;
   
   .grid-square{
-    background-image: url(/images//portraitnb.jpg);
+    background-image: url(/images//portraitnblight.jpg);
     background-repeat: no-repeat;
     background-size: 100vh 100vh;
     border : 10px solid #32213A;
@@ -53,7 +54,7 @@ body{
     
   }
   .two{
-    width: 100vh;
+    width: 80vh;
     height: 20vh;
     background-color: transparent;
     background-image: none;
@@ -112,7 +113,7 @@ body{
       margin-left: -10px;
       margin-top: -10px;
       transition: all 0.25s ease-out;
-      background-color: rgba(255, 255, 255, 0.301);
+
       &:hover{
         background-color: rgba(253, 34, 217, 0.301);
       }
@@ -124,7 +125,7 @@ body{
     height: 40vh;
     top:40vh;
     left:80vh;
-    background-color: blanchedalmond;
+    
   }
   .seven{
     background-position: -20vh -80vh;
@@ -132,7 +133,20 @@ body{
     height: 20vh;
     top:80vh;
     left:20vh;
-    background-color: blanchedalmond;
+
+    .folder{
+      width:80vh;
+      height: 20vh; 
+      z-index: 2;
+      position: absolute;
+      margin-left: -10px;
+      margin-top: -10px;
+      transition: all 0.25s ease-out;
+
+      &:hover{
+        background-color: rgba(208, 223, 9, 0.301);
+      }
+    }
   }
 
 }
