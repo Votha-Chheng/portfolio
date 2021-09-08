@@ -34,7 +34,7 @@ body {
   background-image: url("./images//portraitnblight.jpg");
   background-repeat: no-repeat;
   background-size: 100vh 100vh;
-  border: 10px solid #32213A;
+  border: 15px solid #32213A;
   position: absolute;
   -webkit-transition: all 0.25s ease-out;
   transition: all 0.25s ease-out;
@@ -44,6 +44,14 @@ body {
 .grid-container .grid-square:hover {
   border: 10px solid transparent;
   mix-blend-mode: normal;
+}
+
+.grid-container .grid-square .folder {
+  z-index: 2;
+  position: absolute;
+  border: 15px solid #32213A;
+  -webkit-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
 }
 
 .grid-container .top {
@@ -93,6 +101,14 @@ body {
           transform: translate(-100%);
 }
 
+.grid-container .three .folder {
+  width: 20vh;
+  height: 20vh;
+  margin-left: -15px;
+  margin-top: -15px;
+  background-color: rgba(0, 128, 0, 0.301);
+}
+
 .grid-container .four {
   width: 80vh;
   height: 40vh;
@@ -105,16 +121,8 @@ body {
 .grid-container .four .folder {
   width: 80vh;
   height: 40vh;
-  z-index: 2;
-  position: absolute;
-  margin-left: -10px;
-  margin-top: -10px;
-  -webkit-transition: all 0.25s ease-out;
-  transition: all 0.25s ease-out;
-}
-
-.grid-container .four .folder:hover {
-  background-color: rgba(0, 128, 0, 0.301);
+  margin-left: -15px;
+  margin-top: -15px;
 }
 
 .grid-container .five {
@@ -130,16 +138,9 @@ body {
 .grid-container .five .folder {
   width: 20vh;
   height: 40vh;
-  z-index: 2;
-  position: absolute;
-  margin-left: -10px;
-  margin-top: -10px;
-  -webkit-transition: all 0.25s ease-out;
-  transition: all 0.25s ease-out;
-}
-
-.grid-container .five .folder:hover {
-  background-color: rgba(253, 34, 217, 0.301);
+  margin-left: -15px;
+  margin-top: -15px;
+  background-color: rgba(245, 143, 228, 0.301);
 }
 
 .grid-container .seven {
@@ -155,16 +156,9 @@ body {
 .grid-container .seven .folder {
   width: 80vh;
   height: 20vh;
-  z-index: 2;
-  position: absolute;
-  margin-left: -10px;
-  margin-top: -10px;
-  -webkit-transition: all 0.25s ease-out;
-  transition: all 0.25s ease-out;
-}
-
-.grid-container .seven .folder:hover {
-  background-color: rgba(208, 223, 9, 0.301);
+  margin-left: -15px;
+  margin-top: -15px;
+  background-color: rgba(255, 238, 0, 0.301);
 }
 
 .cv-container {

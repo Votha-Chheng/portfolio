@@ -33,15 +33,20 @@ body{
     background-image: url('./images//portraitnblight.jpg');
     background-repeat: no-repeat;
     background-size: 100vh 100vh;
-    border : 10px solid #32213A;
+    border : 15px solid #32213A;
     position: absolute;
-    //mix-blend-mode: luminosity;
     transition: all 0.25s ease-out;
     z-index: 1;
 
     &:not(.two, .top):hover{
       border: 10px solid transparent;
       mix-blend-mode: normal;
+    }
+    .folder{
+      z-index: 2;
+      position: absolute;
+      border : 15px solid #32213A;
+      transition: all 0.25s ease-out;
     }
   }
 
@@ -81,6 +86,14 @@ body{
     left: 0px;
     background-position: 0px -40vh;
     transform: translate(-100%);
+
+    .folder{
+      width:20vh;
+      height: 20vh; 
+      margin-left: -15px;
+      margin-top: -15px;
+      background-color: rgba(0, 128, 0, 0.301);
+    }
     
   }
   .four{
@@ -90,20 +103,13 @@ body{
     left:20vh;
     background-position: -20vh -40vh;
     opacity: 0;
-
-    
+ 
     .folder{
       width:80vh;
       height: 40vh; 
-      z-index: 2;
-      position: absolute;
-      margin-left: -10px;
-      margin-top: -10px;
-      transition: all 0.25s ease-out;
-
-      &:hover{
-        background-color: rgba(0, 128, 0, 0.301);
-      }
+      margin-left: -15px;
+      margin-top: -15px;
+      //background-color: rgba(4, 160, 250, 0.301);
     }
   }
   .five{
@@ -117,25 +123,12 @@ body{
     .folder{
       width:20vh;
       height: 40vh; 
-      z-index: 2;
-      position: absolute;
-      margin-left: -10px;
-      margin-top: -10px;
-      transition: all 0.25s ease-out;
-
-      &:hover{
-        background-color: rgba(253, 34, 217, 0.301);
-      }
+      margin-left: -15px;
+      margin-top: -15px;
+      background-color: rgba(245, 143, 228, 0.301);
     }
   }
-  // .six{
-  //   background-position: -80vh -40vh;
-  //   width:20vh;
-  //   height: 40vh;
-  //   top:40vh;
-  //   left:80vh;
-    
-  // }
+
   .seven{
     background-position: -20vh -80vh;
     width:80vh;
@@ -147,15 +140,9 @@ body{
     .folder{
       width:80vh;
       height: 20vh; 
-      z-index: 2;
-      position: absolute;
-      margin-left: -10px;
-      margin-top: -10px;
-      transition: all 0.25s ease-out;
-
-      &:hover{
-        background-color: rgba(208, 223, 9, 0.301);
-      }
+      margin-left: -15px;
+      margin-top: -15px;
+      background-color: rgba(255, 238, 0, 0.301);
     }
   }
 }
