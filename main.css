@@ -1,5 +1,6 @@
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -15,8 +16,10 @@ body {
   margin: 0 auto;
   overflow: hidden;
 }
+
 .portrait-container img {
-  filter: brightness(200%) contrast(125%);
+  -webkit-filter: brightness(200%) contrast(125%);
+          filter: brightness(200%) contrast(125%);
 }
 
 .grid-container {
@@ -26,36 +29,52 @@ body {
   margin: 0px auto;
   overflow: hidden;
 }
+
 .grid-container .grid-square {
-  background-image: url(/images//portraitnblight.jpg);
+  background-image: url("./images//portraitnblight.jpg");
   background-repeat: no-repeat;
   background-size: 100vh 100vh;
   border: 10px solid #32213A;
   position: absolute;
+  -webkit-transition: all 0.25s ease-out;
   transition: all 0.25s ease-out;
   z-index: 1;
 }
-.grid-container .grid-square:not(.two, .top):hover {
+
+.grid-container .grid-square:hover {
   border: 10px solid transparent;
+  mix-blend-mode: normal;
 }
+
 .grid-container .top {
+  position: absolute;
   width: 100vh;
   height: 20vh;
   top: 0px;
   left: 0px;
   color: blanchedalmond;
   font-family: "Open Sans Condensed", sans-serif;
+  background-color: #8d80ad;
+  border-left: 10px solid #32213A;
 }
+
 .grid-container .two {
+  position: absolute;
   width: 80vh;
   height: 20vh;
   background-color: transparent;
   background-image: none;
   top: 20vh;
   left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-size: calc(2.5rem + 0.5vw);
   font-family: "Open Sans Condensed", sans-serif;
   color: blanchedalmond;
@@ -63,20 +82,26 @@ body {
   font-weight: bold;
   border: none;
 }
+
 .grid-container .three {
   width: 20vh;
   height: 20vh;
   top: 40vh;
   left: 0px;
   background-position: 0px -40vh;
+  -webkit-transform: translate(-100%);
+          transform: translate(-100%);
 }
+
 .grid-container .four {
   width: 80vh;
   height: 40vh;
   top: 40vh;
   left: 20vh;
   background-position: -20vh -40vh;
+  opacity: 0;
 }
+
 .grid-container .four .folder {
   width: 80vh;
   height: 40vh;
@@ -84,18 +109,24 @@ body {
   position: absolute;
   margin-left: -10px;
   margin-top: -10px;
+  -webkit-transition: all 0.25s ease-out;
   transition: all 0.25s ease-out;
 }
+
 .grid-container .four .folder:hover {
   background-color: rgba(0, 128, 0, 0.301);
 }
+
 .grid-container .five {
   background-position: 0px -60vh;
   width: 20vh;
   height: 40vh;
   top: 60vh;
   left: 0;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
 }
+
 .grid-container .five .folder {
   width: 20vh;
   height: 40vh;
@@ -103,25 +134,24 @@ body {
   position: absolute;
   margin-left: -10px;
   margin-top: -10px;
+  -webkit-transition: all 0.25s ease-out;
   transition: all 0.25s ease-out;
 }
+
 .grid-container .five .folder:hover {
   background-color: rgba(253, 34, 217, 0.301);
 }
-.grid-container .six {
-  background-position: -80vh -40vh;
-  width: 20vh;
-  height: 40vh;
-  top: 40vh;
-  left: 80vh;
-}
+
 .grid-container .seven {
   background-position: -20vh -80vh;
   width: 80vh;
   height: 20vh;
   top: 80vh;
   left: 20vh;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
 }
+
 .grid-container .seven .folder {
   width: 80vh;
   height: 20vh;
@@ -129,8 +159,10 @@ body {
   position: absolute;
   margin-left: -10px;
   margin-top: -10px;
+  -webkit-transition: all 0.25s ease-out;
   transition: all 0.25s ease-out;
 }
+
 .grid-container .seven .folder:hover {
   background-color: rgba(208, 223, 9, 0.301);
 }
@@ -138,4 +170,5 @@ body {
 .cv-container {
   margin: 0 auto;
   width: 200px;
-}/*# sourceMappingURL=main.css.map */
+}
+/*# sourceMappingURL=main.css.map */

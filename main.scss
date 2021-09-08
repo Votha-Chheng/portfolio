@@ -10,6 +10,7 @@ body{
   background-color: #32213A;
   position: relative;
 }
+
 .portrait-container{
   width: 100vh;
   height: 100vh;
@@ -20,6 +21,7 @@ body{
     filter: brightness(200%) contrast(125%);
   }
 }
+
 .grid-container{
   width: 80vh;
   height: 100vh;
@@ -28,7 +30,7 @@ body{
   overflow: hidden;
   
   .grid-square{
-    background-image: url(/images//portraitnblight.jpg);
+    background-image: url('./images//portraitnblight.jpg');
     background-repeat: no-repeat;
     background-size: 100vh 100vh;
     border : 10px solid #32213A;
@@ -38,22 +40,24 @@ body{
     z-index: 1;
 
     &:not(.two, .top):hover{
-
       border: 10px solid transparent;
-
+      mix-blend-mode: normal;
     }
   }
+
   .top{
+    position: absolute;
     width: 100vh;
     height: 20vh;
     top:0px;
     left:0px;
     color: blanchedalmond;
     font-family: $font-h1;
-
-    
+    background-color: #8d80ad;
+    border-left: 10px solid #32213A;
   }
   .two{
+    position: absolute;
     width: 80vh;
     height: 20vh;
     background-color: transparent;
@@ -76,6 +80,8 @@ body{
     top:40vh;
     left: 0px;
     background-position: 0px -40vh;
+    transform: translate(-100%);
+    
   }
   .four{
     width: 80vh;
@@ -83,6 +89,8 @@ body{
     top:40vh;
     left:20vh;
     background-position: -20vh -40vh;
+    opacity: 0;
+
     
     .folder{
       width:80vh;
@@ -104,6 +112,7 @@ body{
     height: 40vh;
     top:60vh;
     left:0;
+    transform: translateY(100%);
 
     .folder{
       width:20vh;
@@ -119,20 +128,21 @@ body{
       }
     }
   }
-  .six{
-    background-position: -80vh -40vh;
-    width:20vh;
-    height: 40vh;
-    top:40vh;
-    left:80vh;
+  // .six{
+  //   background-position: -80vh -40vh;
+  //   width:20vh;
+  //   height: 40vh;
+  //   top:40vh;
+  //   left:80vh;
     
-  }
+  // }
   .seven{
     background-position: -20vh -80vh;
     width:80vh;
     height: 20vh;
     top:80vh;
     left:20vh;
+    transform: translateX(100%);
 
     .folder{
       width:80vh;
@@ -148,7 +158,6 @@ body{
       }
     }
   }
-
 }
 
 .cv-container{
