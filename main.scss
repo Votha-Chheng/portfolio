@@ -28,15 +28,29 @@ body{
   
   .grid-square{
     background-image: url(/images//portraitnb.jpg);
+    background-repeat: no-repeat;
+    background-size: 100vh 100vh;
     border : 10px solid #32213A;
     position: absolute;
-    mix-blend-mode: luminosity;
+    //mix-blend-mode: luminosity;
+    transition: all 0.25s ease-out;
+    z-index: 1;
+
+    &:not(.two, .top):hover{
+
+      border: 10px solid transparent;
+
+    }
   }
   .top{
     width: 100vh;
     height: 20vh;
     top:0px;
-    left:0px
+    left:0px;
+    color: blanchedalmond;
+    font-family: $font-h1;
+
+    
   }
   .two{
     width: 100vh;
@@ -48,67 +62,79 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 3.5rem;
+    font-size:calc(2.5rem + 0.5vw) ;
     font-family: $font-h1;
     color: blanchedalmond;
     letter-spacing: 0.5px;
     font-weight: bold;
+    border: none;
   }
   .three{
-    width:80vh;
+    width:20vh;
     height: 20vh;
-    background-color: blanchedalmond;
     top:40vh;
     left: 0px;
     background-position: 0px -40vh;
-    
   }
   .four{
-    width: 20vh;
-    height: 60vh;
+    width: 80vh;
+    height: 40vh;
     top:40vh;
-    left:80vh;
-    background-position: -80vh -40vh;
+    left:20vh;
+    background-position: -20vh -40vh;
+    
+    .folder{
+      width:80vh;
+      height: 40vh; 
+      z-index: 2;
+      position: absolute;
+      margin-left: -10px;
+      margin-top: -10px;
+      transition: all 0.25s ease-out;
+
+      &:hover{
+        background-color: rgba(0, 128, 0, 0.301);
+      }
+    }
   }
   .five{
     background-position: 0px -60vh;
     width: 20vh;
     height: 40vh;
     top:60vh;
-    left:0
+    left:0;
+
+    .folder{
+      width:20vh;
+      height: 40vh; 
+      z-index: 2;
+      position: absolute;
+      margin-left: -10px;
+      margin-top: -10px;
+      transition: all 0.25s ease-out;
+      background-color: rgba(255, 255, 255, 0.301);
+      &:hover{
+        background-color: rgba(253, 34, 217, 0.301);
+      }
+    }
   }
   .six{
+    background-position: -80vh -40vh;
+    width:20vh;
+    height: 40vh;
+    top:40vh;
+    left:80vh;
+    background-color: blanchedalmond;
+  }
+  .seven{
     background-position: -20vh -80vh;
-    width:60vh;
+    width:80vh;
     height: 20vh;
     top:80vh;
     left:20vh;
     background-color: blanchedalmond;
   }
-  .seven{
-    background-position: -20vh -60vh;
-    width:20vh;
-    height: 20vh;
-    top:60vh;
-    left:20vh;
-    background-color: blanchedalmond;
-  }
-  .eight{
-    width:20vh;
-    height: 20vh;
-    top:60vh;
-    left:40vh;
-    background-color: blanchedalmond;
-    background-position: -40vh -60vh;
-  }
-  .nine{
-    background-position: -60vh -60vh;
-    width:20vh;
-    height: 20vh;
-    top:60vh;
-    left:60vh;
-    background-color: blanchedalmond;
-  }
+
 }
 
 .cv-container{

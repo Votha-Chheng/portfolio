@@ -27,15 +27,23 @@ body {
 }
 .grid-container .grid-square {
   background-image: url(/images//portraitnb.jpg);
+  background-repeat: no-repeat;
+  background-size: 100vh 100vh;
   border: 10px solid #32213A;
   position: absolute;
-  mix-blend-mode: luminosity;
+  transition: all 0.25s ease-out;
+  z-index: 1;
+}
+.grid-container .grid-square:not(.two, .top):hover {
+  border: 10px solid transparent;
 }
 .grid-container .top {
   width: 100vh;
   height: 20vh;
   top: 0px;
   left: 0px;
+  color: blanchedalmond;
+  font-family: "Open Sans Condensed", sans-serif;
 }
 .grid-container .two {
   width: 100vh;
@@ -47,26 +55,38 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 3.5rem;
+  font-size: calc(2.5rem + 0.5vw);
   font-family: "Open Sans Condensed", sans-serif;
   color: blanchedalmond;
   letter-spacing: 0.5px;
   font-weight: bold;
+  border: none;
 }
 .grid-container .three {
-  width: 80vh;
+  width: 20vh;
   height: 20vh;
-  background-color: blanchedalmond;
   top: 40vh;
   left: 0px;
   background-position: 0px -40vh;
 }
 .grid-container .four {
-  width: 20vh;
-  height: 60vh;
+  width: 80vh;
+  height: 40vh;
   top: 40vh;
-  left: 80vh;
-  background-position: -80vh -40vh;
+  left: 20vh;
+  background-position: -20vh -40vh;
+}
+.grid-container .four .folder {
+  width: 80vh;
+  height: 40vh;
+  z-index: 2;
+  position: absolute;
+  margin-left: -10px;
+  margin-top: -10px;
+  transition: all 0.25s ease-out;
+}
+.grid-container .four .folder:hover {
+  background-color: rgba(0, 128, 0, 0.301);
 }
 .grid-container .five {
   background-position: 0px -60vh;
@@ -75,36 +95,33 @@ body {
   top: 60vh;
   left: 0;
 }
+.grid-container .five .folder {
+  width: 20vh;
+  height: 40vh;
+  z-index: 2;
+  position: absolute;
+  margin-left: -10px;
+  margin-top: -10px;
+  transition: all 0.25s ease-out;
+  background-color: rgba(255, 255, 255, 0.301);
+}
+.grid-container .five .folder:hover {
+  background-color: rgba(253, 34, 217, 0.301);
+}
 .grid-container .six {
-  background-position: -20vh -80vh;
-  width: 60vh;
-  height: 20vh;
-  top: 80vh;
-  left: 20vh;
+  background-position: -80vh -40vh;
+  width: 20vh;
+  height: 40vh;
+  top: 40vh;
+  left: 80vh;
   background-color: blanchedalmond;
 }
 .grid-container .seven {
-  background-position: -20vh -60vh;
-  width: 20vh;
+  background-position: -20vh -80vh;
+  width: 80vh;
   height: 20vh;
-  top: 60vh;
+  top: 80vh;
   left: 20vh;
-  background-color: blanchedalmond;
-}
-.grid-container .eight {
-  width: 20vh;
-  height: 20vh;
-  top: 60vh;
-  left: 40vh;
-  background-color: blanchedalmond;
-  background-position: -40vh -60vh;
-}
-.grid-container .nine {
-  background-position: -60vh -60vh;
-  width: 20vh;
-  height: 20vh;
-  top: 60vh;
-  left: 60vh;
   background-color: blanchedalmond;
 }
 
