@@ -1,6 +1,5 @@
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -16,10 +15,8 @@ body {
   margin: 0 auto;
   overflow: hidden;
 }
-
 .portrait-container img {
-  -webkit-filter: brightness(200%) contrast(125%);
-          filter: brightness(200%) contrast(125%);
+  filter: brightness(200%) contrast(125%);
 }
 
 .grid-container {
@@ -29,31 +26,21 @@ body {
   margin: 0px auto;
   overflow: hidden;
 }
-
 .grid-container .grid-square {
   background-image: url("./images//portraitnblight.jpg");
   background-repeat: no-repeat;
   background-size: 100vh 100vh;
-  border: 15px solid #32213A;
+  border: 10px solid #32213A;
   position: absolute;
-  -webkit-transition: all 0.25s ease-out;
   transition: all 0.25s ease-out;
   z-index: 1;
 }
-
-.grid-container .grid-square:hover {
-  border: 10px solid transparent;
-  mix-blend-mode: normal;
-}
-
 .grid-container .grid-square .folder {
   z-index: 2;
   position: absolute;
-  border: 15px solid #32213A;
-  -webkit-transition: all 0.25s ease-out;
+  border: 10px solid #32213A;
   transition: all 0.25s ease-out;
 }
-
 .grid-container .top {
   position: absolute;
   width: 100vh;
@@ -65,7 +52,6 @@ body {
   background-color: #8d80ad;
   border-left: 10px solid #32213A;
 }
-
 .grid-container .two {
   position: absolute;
   width: 80vh;
@@ -74,15 +60,9 @@ body {
   background-image: none;
   top: 20vh;
   left: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   font-size: calc(2.5rem + 0.5vw);
   font-family: "Open Sans Condensed", sans-serif;
   color: blanchedalmond;
@@ -90,79 +70,67 @@ body {
   font-weight: bold;
   border: none;
 }
-
 .grid-container .three {
   width: 20vh;
   height: 20vh;
   top: 40vh;
   left: 0px;
-  background-position: 0px -40vh;
-  -webkit-transform: translate(-100%);
-          transform: translate(-100%);
+  background-position: 0px 0vh;
+  transform: translate(-100%);
 }
-
 .grid-container .three .folder {
   width: 20vh;
   height: 20vh;
-  margin-left: -15px;
-  margin-top: -15px;
+  margin-left: -10px;
+  margin-top: -10px;
   background-color: rgba(0, 128, 0, 0.301);
 }
-
 .grid-container .four {
   width: 80vh;
   height: 40vh;
   top: 40vh;
   left: 20vh;
-  background-position: -20vh -40vh;
+  background-position: -20vh 0vh;
   opacity: 0;
 }
-
 .grid-container .four .folder {
   width: 80vh;
   height: 40vh;
-  margin-left: -15px;
-  margin-top: -15px;
+  margin-left: -10px;
+  margin-top: -10px;
 }
-
 .grid-container .five {
-  background-position: 0px -60vh;
+  background-position: 0px -20vh;
   width: 20vh;
   height: 40vh;
   top: 60vh;
   left: 0;
-  -webkit-transform: translateY(100%);
-          transform: translateY(100%);
+  transform: translateY(100%);
 }
-
 .grid-container .five .folder {
   width: 20vh;
   height: 40vh;
-  margin-left: -15px;
-  margin-top: -15px;
-  background-color: rgba(245, 143, 228, 0.301);
+  margin-left: -10px;
+  margin-top: -10px;
+  background-color: rgba(255, 2, 213, 0.5);
 }
-
 .grid-container .seven {
-  background-position: -20vh -80vh;
+  background-position: -20vh -40vh;
   width: 80vh;
   height: 20vh;
   top: 80vh;
   left: 20vh;
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
+  transform: translateX(-125%);
 }
-
 .grid-container .seven .folder {
   width: 80vh;
   height: 20vh;
-  margin-left: -15px;
-  margin-top: -15px;
+  margin-left: -10px;
+  margin-top: -10px;
   background-color: rgba(255, 238, 0, 0.301);
 }
 
 .cv-container {
   margin: 0 auto;
   width: 200px;
-}
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */

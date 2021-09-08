@@ -33,19 +33,19 @@ body{
     background-image: url('./images//portraitnblight.jpg');
     background-repeat: no-repeat;
     background-size: 100vh 100vh;
-    border : 15px solid #32213A;
+    border : 10px solid #32213A;
     position: absolute;
     transition: all 0.25s ease-out;
     z-index: 1;
 
-    &:not(.two, .top):hover{
-      border: 10px solid transparent;
-      mix-blend-mode: normal;
-    }
+    // &:not(.two, .top):hover{
+    //   border: 10px solid transparent;
+    //   mix-blend-mode: normal;
+    // }
     .folder{
       z-index: 2;
       position: absolute;
-      border : 15px solid #32213A;
+      border : 10px solid #32213A;
       transition: all 0.25s ease-out;
     }
   }
@@ -84,14 +84,14 @@ body{
     height: 20vh;
     top:40vh;
     left: 0px;
-    background-position: 0px -40vh;
+    background-position: 0px 0vh;
     transform: translate(-100%);
 
     .folder{
       width:20vh;
       height: 20vh; 
-      margin-left: -15px;
-      margin-top: -15px;
+      margin-left: -10px;
+      margin-top: -10px;
       background-color: rgba(0, 128, 0, 0.301);
     }
     
@@ -101,19 +101,19 @@ body{
     height: 40vh;
     top:40vh;
     left:20vh;
-    background-position: -20vh -40vh;
+    background-position: -20vh 0vh;
     opacity: 0;
  
     .folder{
       width:80vh;
       height: 40vh; 
-      margin-left: -15px;
-      margin-top: -15px;
+      margin-left: -10px;
+      margin-top: -10px;
       //background-color: rgba(4, 160, 250, 0.301);
     }
   }
   .five{
-    background-position: 0px -60vh;
+    background-position: 0px -20vh;
     width: 20vh;
     height: 40vh;
     top:60vh;
@@ -123,25 +123,25 @@ body{
     .folder{
       width:20vh;
       height: 40vh; 
-      margin-left: -15px;
-      margin-top: -15px;
-      background-color: rgba(245, 143, 228, 0.301);
+      margin-left: -10px;
+      margin-top: -10px;
+      background-color: rgba(255, 2, 213, 0.5);
     }
   }
 
   .seven{
-    background-position: -20vh -80vh;
+    background-position: -20vh -40vh;
     width:80vh;
     height: 20vh;
     top:80vh;
     left:20vh;
-    transform: translateX(100%);
+    transform: translateX(-125%);
 
     .folder{
       width:80vh;
       height: 20vh; 
-      margin-left: -15px;
-      margin-top: -15px;
+      margin-left: -10px;
+      margin-top: -10px;
       background-color: rgba(255, 238, 0, 0.301);
     }
   }
