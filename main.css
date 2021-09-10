@@ -19,11 +19,45 @@ body {
   filter: brightness(200%) contrast(125%);
 }
 
+.top {
+  position: relative;
+  margin: 0 auto;
+  width: 1440px;
+  height: 20vh;
+  top: 0px;
+  left: 0px;
+  color: #001432;
+  font-family: "Open Sans Condensed", sans-serif;
+  background-color: #8d80ad;
+  filter: invert(100%);
+}
+.top::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: difference;
+  z-index: 50;
+  background-color: whitesmoke;
+}
+.top h1 {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 7.5rem;
+  position: absolute;
+  letter-spacing: 2px;
+  font-variant: small-caps;
+  font-weight: bolder;
+  left: -22.5px;
+  margin: 0;
+  transform: translate(0, -50%);
+  top: 50%;
+}
+
 .grid-container {
   width: 80vh;
   height: 100vh;
   position: relative;
-  margin: 0px auto;
+  margin: -20vh auto 0;
   overflow: hidden;
 }
 .grid-container .grid-square {
@@ -40,17 +74,6 @@ body {
   position: absolute;
   border: 10px solid #32213A;
   transition: all 0.25s ease-out;
-}
-.grid-container .top {
-  position: absolute;
-  width: 100vh;
-  height: 20vh;
-  top: 0px;
-  left: 0px;
-  color: blanchedalmond;
-  font-family: "Open Sans Condensed", sans-serif;
-  background-color: #8d80ad;
-  border-left: 10px solid #32213A;
 }
 .grid-container .two {
   position: absolute;
@@ -70,20 +93,23 @@ body {
   font-weight: bold;
   border: none;
 }
+.grid-container .two h2 {
+  font-variant: small-caps;
+  font-family: "Open Sans Condensed", sans-serif;
+}
 .grid-container .three {
   width: 20vh;
   height: 20vh;
   top: 40vh;
   left: 0px;
   background-position: 0px 0vh;
-  transform: translate(-100%);
+  transform: rotateY(90deg);
 }
 .grid-container .three .folder {
   width: 20vh;
   height: 20vh;
   margin-left: -10px;
   margin-top: -10px;
-  background-color: rgba(0, 128, 0, 0.301);
 }
 .grid-container .four {
   width: 80vh;
@@ -112,7 +138,6 @@ body {
   height: 40vh;
   margin-left: -10px;
   margin-top: -10px;
-  background-color: rgba(255, 2, 213, 0.5);
 }
 .grid-container .seven {
   background-position: -20vh -40vh;
@@ -127,10 +152,131 @@ body {
   height: 20vh;
   margin-left: -10px;
   margin-top: -10px;
-  background-color: rgba(255, 238, 0, 0.301);
 }
 
 .cv-container {
   margin: 0 auto;
   width: 200px;
+}
+
+/***********************Media queries********************************/
+@media screen and (max-width: 1440px) {
+  .top {
+    width: 1024px;
+  }
+  .top h1 {
+    left: -18px;
+    font-size: 5.5rem;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .top {
+    width: 768px;
+    height: 150px;
+  }
+  .top h1 {
+    left: -18px;
+    font-size: 5.5rem;
+  }
+
+  .grid-container {
+    width: 80vw;
+    height: 100vw;
+    position: relative;
+    margin: -20vw auto 0;
+    overflow: hidden;
+  }
+  .grid-container .grid-square {
+    background-image: url("./images//portraitnblight.jpg");
+    background-repeat: no-repeat;
+    background-size: 100vw 100vw;
+    border: 10px solid #32213A;
+    position: absolute;
+    transition: all 0.25s ease-out;
+    z-index: 1;
+  }
+  .grid-container .grid-square .folder {
+    z-index: 2;
+    position: absolute;
+    border: 10px solid #32213A;
+    transition: all 0.25s ease-out;
+  }
+  .grid-container .two {
+    position: absolute;
+    width: 80vw;
+    height: 20vw;
+    background-color: transparent;
+    background-image: none;
+    top: 20vw;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(2.5rem + 0.5vw);
+    font-family: "Open Sans Condensed", sans-serif;
+    color: blanchedalmond;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+    border: none;
+  }
+  .grid-container .two h2 {
+    font-variant: small-caps;
+    font-family: "Open Sans Condensed", sans-serif;
+  }
+  .grid-container .three {
+    width: 20vw;
+    height: 20vw;
+    top: 40vw;
+    left: 0px;
+    background-position: 0px 0vw;
+    transform: rotateY(90deg);
+  }
+  .grid-container .three .folder {
+    width: 20vw;
+    height: 20vw;
+    margin-left: -10px;
+    margin-top: -10px;
+  }
+  .grid-container .four {
+    width: 80vw;
+    height: 40vw;
+    top: 40vw;
+    left: 20vw;
+    background-position: -20vw 0vw;
+    opacity: 0;
+  }
+  .grid-container .four .folder {
+    width: 80vw;
+    height: 40vw;
+    margin-left: -10px;
+    margin-top: -10px;
+  }
+  .grid-container .five {
+    background-position: 0px -20vw;
+    width: 20vw;
+    height: 40vw;
+    top: 60vw;
+    left: 0;
+    transform: translateY(100%);
+  }
+  .grid-container .five .folder {
+    width: 20vw;
+    height: 40vw;
+    margin-left: -10px;
+    margin-top: -10px;
+  }
+  .grid-container .seven {
+    background-position: -20vw -40vw;
+    width: 80vw;
+    height: 20vw;
+    top: 80vw;
+    left: 20vw;
+    transform: translateX(-125%);
+  }
+  .grid-container .seven .folder {
+    width: 80vw;
+    height: 20vw;
+    margin-left: -10px;
+    margin-top: -10px;
+  }
 }/*# sourceMappingURL=main.css.map */
