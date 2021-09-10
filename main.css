@@ -9,16 +9,6 @@ body {
   position: relative;
 }
 
-.portrait-container {
-  width: 100vh;
-  height: 100vh;
-  margin: 0 auto;
-  overflow: hidden;
-}
-.portrait-container img {
-  filter: brightness(200%) contrast(125%);
-}
-
 .top {
   position: relative;
   margin: 0 auto;
@@ -66,14 +56,16 @@ body {
   background-size: 100vh 100vh;
   border: 10px solid #32213A;
   position: absolute;
-  transition: all 0.25s ease-out;
+  transition: all 0.5s ease-out;
   z-index: 1;
+  pointer-events: none;
 }
 .grid-container .grid-square .folder {
   z-index: 2;
   position: absolute;
   border: 10px solid #32213A;
-  transition: all 0.25s ease-out;
+  font-family: "Lato", sans-serif;
+  font-size: 2rem;
 }
 .grid-container .two {
   position: absolute;
@@ -118,6 +110,9 @@ body {
   left: 20vh;
   background-position: -20vh 0vh;
   opacity: 0;
+}
+.grid-container .four:hover {
+  background-image: url(/images/html.svg);
 }
 .grid-container .four .folder {
   width: 80vh;
@@ -167,6 +162,11 @@ body {
   .top h1 {
     left: -18px;
     font-size: 5.5rem;
+  }
+
+  h2 {
+    font-size: clamp(2.5rem, 4vw, 4.5rem);
+    text-align: center;
   }
 }
 @media screen and (max-width: 1024px) {
