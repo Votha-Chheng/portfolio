@@ -3,7 +3,7 @@
 }
 
 $font-h1 : 'Open Sans Condensed', sans-serif;
-$font-menu : 'Lato', sans-serif;
+$font-menu : 'Oswald', sans-serif;
 
 body{
   padding: 0;
@@ -47,14 +47,83 @@ body{
     top:50%;
   }
 }
+.skills-front, .skills-back-tools{
+  position: absolute;
+  transition: transform 0.58s ease-out;
+  z-index:-1;
+  height: 60vh;
+  top:40vh;
+  display: none;
+}
+.skills-front{
+  width: calc((100vw - 85vh)/2);
+  left: 0;
+  transform: translate(110%, 0);
 
+  &.visible-slide{
+    transform: translate(15px, 0);
+  }
+  
+  h3{
+    text-align: center;
+    font-size: 2rem;
+    font-family: $font-menu;
+    color: #cbdad9;
+    margin: 0;
+  }
+  .front-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #82a3a1;
+    border-radius: 10px;
+    padding: 10px;
+    
+    img{
+      width: 5vw;
+      margin: 15px;
+    }
+  }
+
+}
+.skills-back-tools{
+  width: calc((100vw - 85vh)/2);
+  right: 0;
+  transform: translate(-110%, 0);
+
+  &.visible-slide{
+    transform: translate(-10px, 0);
+  }
+
+  h3{
+    text-align: center;
+    font-size: 2rem;
+    font-family: $font-menu;
+    color: #cbdad9;
+    margin: 0;
+  }
+
+  .back-container, .tools-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #93827f;
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  img{
+    width: 5vw;
+    margin: 15px;
+  }
+}
 .grid-container{
   width: 80vh;
   height: 100vh;
   position: relative;
   margin: -20vh auto 0;
   overflow: hidden;
-  
+ 
   .grid-square{
     background-image: url('./images//portraitnblight.jpg');
     background-repeat: no-repeat;
@@ -62,15 +131,31 @@ body{
     border : 10px solid #32213A;
     position: absolute;
     transition: all 0.5s ease-out;
-    z-index: 1;
     pointer-events: none;
     
     .folder{
-      z-index: 2;
       position: absolute;
       border : 10px solid #32213A;
       font-family: $font-menu;
       font-size: 2rem;
+    }
+    .menu-item{
+      font-family: $font-menu;
+      position: absolute;
+      top : 10px;
+      left :10px;
+      color: blanchedalmond;
+      letter-spacing: 2px;
+      font-size: 1.5rem;
+      display: none;
+      transition: display 0.5s ease-out;
+
+      div{
+        width: 95%;
+        height: 90%;
+        transition: transform 0.25s ease-out, color 0.25s ease-out, font-size 0.25s ease-out , background-color 0.25s ease-out;
+        padding-left: 10px;
+      }
     }
   }
   
@@ -114,17 +199,13 @@ body{
     
   }
   .four{
-    width: 80vh;
+    width: 60vh;
     height: 40vh;
     top:40vh;
     left:20vh;
     background-position: -20vh 0vh;
     opacity: 0;
-    //transition: background-image 0.75s ease-out;
-
-    &:hover{
-      background-image: url(/images/html.svg);
-    }
+    border-right: none;
  
     .folder{
       width:80vh;
@@ -148,22 +229,86 @@ body{
       margin-top: -10px;
     }
   }
-
+  .seven.active-menu{
+    width: 100vh;
+    height: 100vh;
+    background-position: 20vh 0vh;
+    top: 40vh;
+    left: 0;
+  }
   .seven{
     background-position: -20vh -40vh;
-    width:80vh;
+    width:60vh;
     height: 20vh;
     top:80vh;
     left:20vh;
-    transform: translateX(-125%);
+    transform: translateX(-100vh);
+    border-right: none;
+
+    .folder.active-menu{
+      width: 100vh;
+      height: 100vh;
+      border: none;
+      margin:0;
+      top: 0vh;
+    }
 
     .folder{
-      width:80vh;
+      border-right: none;
+      width:60vh;
       height: 20vh; 
       margin-left: -10px;
-      margin-top: -10px;
+      margin-top: -10px; 
+
+    }
+    .menu-item.full-title:hover{
+      background-color: transparent;
+      cursor: normal;
+    }
+    .menu-item.full-title img{
+      margin-left: 10px;
+      
+    }
+    .menu-item{
+      width: 60vh;
+      height: 18vh;
+      transition: transform 0.25s ease-out, color 0.25s ease-out, font-size 0.25s ease-out , background-color 0.25s ease-out;
+      top:0px;
+      left:0px;
+
+      .title-menu{
+        position: absolute;
+        margin: 0;
+        top: 50%;
+        left: 10px;
+        width: 125%;
+        font-size: 4.5rem;
+        display: none;
+      }
+
+      &:hover{ 
+        background-color: gray;
+        opacity: 0.75;
+        z-index: 3;
+        transition: transform 0.25s ease-out, color 0.25s ease-out, font-size 0.25s ease-out , background-color 0.25s ease-out;
+
+        div{ 
+          padding: 0;
+          position: absolute;
+          transform :translate(25%, 25%);
+          transition: transform 0.25s ease-out, color 0.25s ease-out, font-size 0.25s ease-out , background-color 0.25s ease-out;
+          text-shadow: 2px 2px black;
+          color: white;
+          font-size: 2rem;
+          filter: brightness(175%);
+          text-shadow: 3px 2.5px 5px black;
+          z-index: 5;
+          opacity: 1;
+        } 
+      }
     }
   }
+
 }
 
 .cv-container{
@@ -187,7 +332,8 @@ body{
     text-align: center;
   }
 }
-@media screen and (max-width : 1024px){
+@media (max-width : 1024px){
+
   .top{
     width: 768px;
     height: 150px;
@@ -200,17 +346,10 @@ body{
   .grid-container{
     width: 80vw;
     height: 100vw;
-    position: relative;
     margin: -20vw auto 0;
-    overflow: hidden;
     
     .grid-square{
-      background-image: url('./images//portraitnblight.jpg');
-      background-repeat: no-repeat;
       background-size: 100vw 100vw;
-      border : 10px solid #32213A;
-      position: absolute;
-      transition: all 0.25s ease-out;
       z-index: 1;
       
       .folder{
@@ -293,7 +432,12 @@ body{
         //background-color: rgba(255, 2, 213, 0.5);
       }
     }
-  
+    .seven.active-menu{
+      width: 100vw;
+      height: 100vw;
+      background-position: 20vw 40vw;
+      top: 40vw;
+    }
     .seven{
       background-position: -20vw -40vw;
       width:80vw;
@@ -301,13 +445,20 @@ body{
       top:80vw;
       left:20vw;
       transform: translateX(-125%);
-  
+
+      .folder.active-menu{
+        width: 100vw;
+        height: 100vw;
+        border: none;
+        top: 0vw;
+        
+      }
+
       .folder{
         width:80vw;
         height: 20vw; 
         margin-left: -10px;
         margin-top: -10px;
-        //background-color: rgba(255, 238, 0, 0.301);
       }
     }
   }
