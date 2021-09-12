@@ -1,0 +1,88 @@
+*{
+  box-sizing: border-box;
+}
+
+$font-h2 : 'Open Sans Condensed', sans-serif;
+$font-menu : 'Oswald', sans-serif;
+$font-serif :"Crimson Text", serif;
+
+h2.subtitle{
+  font-family: $font-h2;
+  color: whitesmoke;
+  letter-spacing: 1.5px;
+  text-align: center;
+  font-size: 3rem;
+}
+
+main{
+  margin-top: 20px;
+
+  section.site{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .card{
+    padding: 5px;
+    width: 360px;
+    height: auto;
+    border-radius: 15px;
+    margin: 20px;
+
+    &.bauxt{
+      background-color: #798a94;
+    }
+
+    &.betry{
+      background-color: #a18496;
+    }
+
+    &.audrey{
+      background-color: rgb(221, 219, 219);
+    }
+    &.cavallo{
+      background-color: #b49365;
+    }
+
+    .description, p{
+      font-family: $font-menu;
+      padding: 0 5px;
+    }
+
+    .link{
+      margin: 0 auto;
+      text-align: center;
+      font-family: 'Oswald', sans-serif;
+      margin-bottom: 10px;
+    }
+     h3{
+      font-family: $font-serif;
+      letter-spacing: 1.2px;
+      text-align: center;
+      color:whitesmoke;
+      margin-bottom: 10px;
+      text-decoration: none;
+    }
+    li{
+      margin: 7.5px 0;
+    }
+  }
+ 
+  #bauxt{
+    font-family: "Parisienne", script;
+    font-size: 1.75rem;
+  }
+  #betry{
+    font-family: "Marck Script", script;
+    font-size: 1.75rem;
+    font-weight: unset;
+  }
+
+  #audrey{
+    font-family: 'Lato', sans-serif;
+    color: #37393a;
+  }
+
+}

@@ -38,6 +38,7 @@ body {
   left: 50%;
   -webkit-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
+  opacity: 0;
 }
 
 a {
@@ -506,6 +507,8 @@ aside #id-container .id-soft-skills .hobbies {
             flex-direction: column-reverse;
     padding: 0;
     background-color: #32213A;
+    -webkit-transform: translateY(20vh);
+            transform: translateY(20vh);
   }
   #frame-a4 main {
     padding: 10px 7.5px;

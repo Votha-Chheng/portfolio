@@ -34,6 +34,7 @@ body{
     top: 22vh;
     left: 50%;
     transform: translate(-50%, 0);
+    opacity: 0;
 }
 a{
     color: inherit;
@@ -435,7 +436,7 @@ aside{
         flex-direction: column-reverse;
         padding: 0;
         background-color: #32213A;
-        //margin: 0;
+        transform: translateY(20vh);
 
         main{
             padding: 10px 7.5px;

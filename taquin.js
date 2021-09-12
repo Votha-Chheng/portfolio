@@ -140,15 +140,15 @@ casseTete.addEventListener("click", (event)=>{
     }) 
     console.log(solutionArray)
     if(solutionArray.includes(false)){
-        document.querySelector(".message").innerHTML = "C'est pas gagné !"
+        document.querySelector("#message").innerHTML = "C'est pas gagné !"
     } else {
-        document.querySelector(".message").innerHTML = "Google captcha a détecté que vous étiez un robot."
+        document.querySelector("#message").innerHTML = "Google captcha a détecté que vous étiez un robot."
         casseTete.style.zIndex = "0"
         casseTete.style.filter = "invert(100%)"
-    }
-        
+    }     
 })    
 
+console.log(document.querySelector("#message"))
 
     
     

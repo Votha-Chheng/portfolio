@@ -167,6 +167,13 @@ body {
   overflow: hidden;
   -webkit-transition: all 1s ease-out;
   transition: all 1s ease-out;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.grid-container.flipped {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 
 .grid-container .grid-square {
@@ -185,6 +192,21 @@ body {
   border: 10px solid #3D2648;
   font-family: "Oswald", sans-serif;
   font-size: 2rem;
+}
+
+.grid-container .grid-square .menu-link {
+  font-family: "Oswald", sans-serif;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: blanchedalmond;
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+  display: none;
+  -webkit-transition: display 0.5s ease-out;
+  transition: display 0.5s ease-out;
+  width: 100%;
+  height: 100%;
 }
 
 .grid-container .grid-square .menu-item {
@@ -312,7 +334,7 @@ body {
 
 .grid-container .three .menu-item .title-menu {
   top: 100%;
-  left: 20%;
+  left: 5%;
 }
 
 .grid-container .three .menu-item div {
@@ -338,6 +360,16 @@ body {
   height: 40vh;
   margin-left: -10px;
   margin-top: -10px;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.grid-container .five.active-menu {
+  width: 100vh;
+  height: 100vh;
+  background-position: 0vh 0vh;
+  top: 40vh;
+  left: 0;
 }
 
 .grid-container .five {
@@ -348,6 +380,18 @@ body {
   left: 0;
   -webkit-transform: translateY(100%);
           transform: translateY(100%);
+}
+
+.grid-container .five .menu-item.full-title:hover {
+  background-color: transparent;
+  top: 10px;
+  left: 10px;
+}
+
+.grid-container .five .menu-item .title-menu {
+  top: 10%;
+  left: 0%;
+  width: 100%;
 }
 
 .grid-container .five .menu-item:hover div {
@@ -361,6 +405,18 @@ body {
   height: 40vh;
   margin-left: -10px;
   margin-top: -10px;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.grid-container .five .folder.active-menu {
+  width: 100vh;
+  height: 100vh;
+  border: none;
+  margin: 0;
+  top: 0vh;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
 }
 
 .grid-container .seven.active-menu {
@@ -426,6 +482,7 @@ body {
   display: none;
 }
 
+/************************** Jeu du taquin***************************/
 /***********************Media queries********************************/
 @media screen and (max-width: 1440px) {
   .top {
@@ -457,38 +514,13 @@ body {
   }
   .grid-container .grid-square {
     background-size: 100vw 100vw;
-    z-index: 1;
-  }
-  .grid-container .grid-square .folder {
-    z-index: 2;
-    position: absolute;
-    border: 10px solid #32213A;
-    -webkit-transition: all 0.25s ease-out;
-    transition: all 0.25s ease-out;
   }
   .grid-container .two {
-    position: absolute;
     width: 80vw;
     height: 20vw;
-    background-color: transparent;
-    background-image: none;
     top: 20vw;
-    left: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     font-size: calc(2.5rem + 0.5vw);
     font-family: "Open Sans Condensed", sans-serif;
-    color: blanchedalmond;
-    letter-spacing: 0.5px;
-    font-weight: bold;
-    border: none;
   }
   .grid-container .two h2 {
     font-variant: small-caps;
@@ -498,10 +530,6 @@ body {
     width: 20vw;
     height: 20vw;
     top: 40vw;
-    left: 0px;
-    background-position: 0px 0vw;
-    -webkit-transform: rotateY(90deg);
-            transform: rotateY(90deg);
   }
   .grid-container .three .folder {
     width: 20vw;
@@ -529,8 +557,6 @@ body {
     height: 40vw;
     top: 60vw;
     left: 0;
-    -webkit-transform: translateY(100%);
-            transform: translateY(100%);
   }
   .grid-container .five .folder {
     width: 20vw;
@@ -570,5 +596,15 @@ body {
   }
 }
 
-/************************** CV ***************************/
+@media (max-width: 500px) {
+  .grid-square:hover .menu-item {
+    background-color: transparent !important;
+  }
+  .top {
+    width: 360px;
+  }
+  .two h2 {
+    font-size: 1.75rem;
+  }
+}
 /*# sourceMappingURL=main.css.map */

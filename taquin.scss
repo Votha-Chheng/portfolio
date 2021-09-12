@@ -1,0 +1,80 @@
+.casse-tete{
+  border: 1px solid white;
+  margin: 20px auto;
+  overflow: hidden;
+  position: absolute;
+  height:400px;
+  width:400px;
+  top: 40vh;
+  left: 50%;
+  transform: translateX(-50%) rotateY(-180deg);
+  backface-visibility: hidden;
+  transition: all 1s ease-out;
+
+  img{
+    position: absolute;
+    width: 400px;
+    height: 400px;
+  }  
+}
+.casse-tete.flipped{
+  transform: translateX(-50%) rotateY(0);
+}
+  
+.piece,.piece-image{
+  border:1px solid whitesmoke;
+  position: absolute;
+  margin: 0;
+  height: 100px;
+  width: 100px;
+  
+  &.empty{
+    border: none;
+  }
+}
+.piece-image{
+  overflow: hidden;
+  transition: all 0.5s ease-out;
+}
+#message{
+  color: whitesmoke;
+  text-align: center;
+  font-size: 2rem;
+  font-family: "Oswald", sans-serif;
+  transition: all 0.5s ease-out;
+}
+#back-jeu{
+  width: 80px;
+  height: 80px;
+  background-image: url(./images/portraitnb.jpg);
+  background-size: 120px;
+  background-position: 0px -40px;
+  position: relative;
+  transition: all 0.5s ease-out;
+  margin: 20px auto;
+  cursor: pointer;
+  display: none;
+  opacity: 0;
+
+  .title-menu-mini{
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    font-size: 1rem;
+    z-index: 20;
+    color: whitesmoke;
+    font-family: "Oswald", sans-serif;
+    
+  }
+  
+  &::before{
+    width: 100%;
+    height: 100%;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 0, 0, 0.384);
+  }
+}
+

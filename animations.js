@@ -11,12 +11,15 @@ const squares = document.querySelectorAll(".grid-square")
 const menuItems = document.querySelectorAll(".menu-item")
 const menuItemsTitleSeven = document.querySelector(".seven .menu-item div")
 const menuItemsTitleThree = document.querySelector(".three .menu-item div")
+const menuItemsTitleFive = document.querySelector(".five .menu-item div")
 const skillsFront = document.querySelector(".skills-front")
 const skillsBackTools = document.querySelector(".skills-back-tools")
+const taquin = document.querySelector(".casse-tete")
 
 const CV = document.querySelector("#frame-a4")
 
 const tabletSize = window.matchMedia("(max-width:1024px)")
+const phoneSize = window.matchMedia("(max-width:500px)")
 
 const TL = gsap.timeline()
 
@@ -63,8 +66,10 @@ window.addEventListener('resize', ()=>{
 
 let menuSeven = false
 let menuThree= false
+let menuFive= false
 const h2SevenTitleMenu = document.querySelector(".seven h2.title-menu")
 const h2ThreeTitleMenu = document.querySelector(".three h2.title-menu")
+const h2FiveTitleMenu = document.querySelector(".five h2.title-menu")
 
 
 /**************************Sélection du menu technos ********************************/
@@ -128,40 +133,105 @@ squareThree.addEventListener('click', ()=>{
     menuItemsTitleThree.style.display = "none"
     squareThree.classList.add("active-menu")
     folderThree.classList.add("active-menu")
+    CV.style.zIndex = "50"
 
+    setTimeout(()=>{
+      gridContainer.style.transform = "scale(0.25)"
+      gridContainer.style.transform = " translate(0, -20vh) scale(0.25)"
+    }, 500)
+     
     setTimeout(()=>{
       gridContainer.style.transform = " translate(-40vw, -20vh) scale(0.25)"
-      
-    }, 500)  
+    }, 1500) 
+
     setTimeout(()=>{
       CV.style.display = "flex"
-    }, 1100)  
+    },2400)
 
-    setTimeout(()=>{
-      
+    setTimeout(()=>{ 
+      CV.style.opacity = 1
       CV.style.height = "29.7cm";
-    }, 1200)    
+    }, 2500)    
 
-  } else {
-    menuItems[0].classList.remove("full-title")
-    
+  } else { 
     CV.style.height = "0";
+    CV.style.zIndex =""
     
     setTimeout(()=>{
       CV.style.display = "none"
-      squareThree.style.zIndex = ""
+      gridContainer.style.transform = "translate(0,-20vh) scale(0.25)"
     }, 750)
 
     setTimeout(()=>{
-      gridContainer.style.transform = "translate(0,0) scale(1)"
-    }, 1000)
+      gridContainer.style.transform = "translate(0, 0vh) scale(0.25)"
+      
+    }, 1550)
 
-    squareThree.classList.remove("active-menu")
-    folderThree.classList.remove("active-menu")
-    h2ThreeTitleMenu.style.display="none"
-    menuItemsTitleThree.style.display = "block"
-  }
-  
+    setTimeout(()=>{
+      menuItems[0].classList.remove("full-title")
+      gridContainer.style.transform = "translate(0, 0vh) scale(1)"
+      
+    }, 2500)
+
+    setTimeout(()=>{
+      squareThree.classList.remove("active-menu")
+      folderThree.classList.remove("active-menu")
+      h2ThreeTitleMenu.style.display="none"
+      menuItemsTitleThree.style.display = "block"
+    }, 3000)
+
+    setTimeout(()=>{
+      h2ThreeTitleMenu.style.display="none"
+      squareThree.style.zIndex = ""
+    }, 4000) 
+  } 
+})
+
+/************************** Sélection du menu Jeu ********************************/
+const backButton = document.querySelector("#back-jeu")
+const message = document.querySelector("#message")
+
+
+squareFive.addEventListener('click', ()=>{
+  squareFive.style.zIndex = "50"
+  squareFive.style.backgroundPosition = "0 -40vh"
+  menuItems[2].classList.add("full-title")
+  h2FiveTitleMenu.style.display="block"
+  menuItemsTitleFive.style.display = "none"
+  squareFive.classList.add("active-menu")
+  folderFive.classList.add("active-menu") 
+  message.style.opacity = 1
+
+  setTimeout(()=>{
+    gridContainer.classList.add("flipped")
+    taquin.classList.add("flipped")
+    backButton.style.display="block"
+    backButton.style.opacity = 1
+    message.style.display = "block"
+  }, 1000)
+
+})
+
+backButton.addEventListener("click", ()=>{
+  gridContainer.classList.remove("flipped")
+  taquin.classList.remove("flipped")
+  backButton.style.display="none"
+  backButton.style.opacity = 0
+  message.style.opacity = 0
+
+  h2FiveTitleMenu.style.display="none"
+  menuItemsTitleFive.style.display = "block"
+  squareFive.classList.remove("active-menu") 
+  folderFive.classList.remove("active-menu")
+
+  setTimeout(()=>{
+    menuItems[2].classList.remove("full-title")
+    message.style.display = "none"  
+  }, 280)
+
+  setTimeout(()=>{
+    squareFive.style.zIndex = ""
+  }, 400)
 })
 
 
