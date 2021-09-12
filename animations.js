@@ -56,6 +56,10 @@ window.addEventListener('load', ()=>{
   }
 })
 window.addEventListener('resize', ()=>{
+  setTimeout(()=>{
+    skillsFront.style.display = "block"
+    skillsBackTools.style.display = "block"
+  },5000)
   if(tabletSize.matches){
     animateStart('vw')
   } else {
@@ -77,8 +81,10 @@ squareSeven.addEventListener('click', ()=>{
     menuItemsTitleSeven.style.display = "none"
     squareSeven.classList.add("active-menu")
     folderSeven.classList.add("active-menu")
-    skillsFront.classList.add("visible-slide")
-    skillsBackTools.classList.add("visible-slide")
+    setTimeout(()=>{
+      skillsFront.classList.add("visible-slide")
+      skillsBackTools.classList.add("visible-slide")
+    }, 350)
   
     if(tabletSize.matches){
       gsap.to(squareSeven, {backgroundPosition:"0vh -40vw"}, '-=2')
@@ -100,8 +106,7 @@ squareSeven.addEventListener('click', ()=>{
       gsap.to(squareSeven, {backgroundPosition:"-20vw -80vw"}, '-=3')
     } else {
       gsap.to(squareSeven, {backgroundPosition:"-20vh -80vh"}, '-=3')
-    }
-    
+    }   
   }
 })
 

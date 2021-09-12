@@ -5,8 +5,17 @@
 body {
   padding: 0;
   margin: 0;
-  background-color: #32213A;
   position: relative;
+  background-color: #32213A;
+}
+
+.blur-bg {
+  background: radial-gradient(#3A2344, #432A4E);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  filter: blur(5px);
+  z-index: -1;
 }
 
 .top {
@@ -71,9 +80,13 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: #82a3a1;
+  background-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0px 25px 45px rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(5x);
+          backdrop-filter: blur(5x);
   border-radius: 10px;
   padding: 10px;
+  border: 1px solid whitesmoke;
 }
 .skills-front .front-container img {
   width: 5vw;
@@ -99,15 +112,20 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: #93827f;
+  background-color: rgba(147, 130, 127, 0.75);
   border-radius: 10px;
   padding: 10px;
+  box-shadow: 0px 25px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid whitesmoke;
+  -webkit-backdrop-filter: blur(5x);
+          backdrop-filter: blur(5x);
 }
 .skills-back-tools img {
   width: 5vw;
   margin: 15px;
 }
 
+/****************** Grid css **********************************************************/
 .grid-container {
   width: 80vh;
   height: 100vh;
@@ -119,14 +137,14 @@ body {
   background-image: url("./images//portraitnblight.jpg");
   background-repeat: no-repeat;
   background-size: 100vh 100vh;
-  border: 10px solid #32213A;
+  border: 10px solid #3D2648;
   position: absolute;
   transition: all 0.5s ease-out;
   pointer-events: none;
 }
 .grid-container .grid-square .folder {
   position: absolute;
-  border: 10px solid #32213A;
+  border: 10px solid #3D2648;
   font-family: "Oswald", sans-serif;
   font-size: 2rem;
 }
@@ -140,11 +158,28 @@ body {
   font-size: 1.5rem;
   display: none;
   transition: display 0.5s ease-out;
+  width: 100%;
+  height: 100%;
 }
-.grid-container .grid-square .menu-item div {
+.grid-container .grid-square .menu-item:hover {
+  background-color: gray;
+  opacity: 0.75;
+  z-index: 3;
+  transition: transform 0.25s ease-out, color 0.25s ease-out, font-size 0.25s ease-out, background-color 0.25s ease-out;
+  top: 0;
+  left: 0;
+}
+.grid-container .grid-square .menu-item:hover div {
+  position: absolute;
+  transition: transform 0.25s ease-out, color 0.25s ease-out, font-size 0.25s ease-out, background-color 0.25s ease-out;
+  color: white;
+  font-size: 2rem;
+  filter: brightness(175%);
+  text-shadow: 3px 2.5px 5px black;
+  z-index: 5;
+  opacity: 1;
   width: 95%;
   height: 90%;
-  transition: transform 0.25s ease-out, color 0.25s ease-out, font-size 0.25s ease-out, background-color 0.25s ease-out;
   padding-left: 10px;
 }
 .grid-container .two {
@@ -183,6 +218,10 @@ body {
   margin-left: -10px;
   margin-top: -10px;
 }
+.grid-container .three .menu-item:hover div {
+  top: 5%;
+  left: 7.5%;
+}
 .grid-container .four {
   width: 60vh;
   height: 40vh;
@@ -191,6 +230,9 @@ body {
   background-position: -20vh 0vh;
   opacity: 0;
   border-right: none;
+}
+.grid-container .four .menu-item div {
+  margin: 10px;
 }
 .grid-container .four .folder {
   width: 80vh;
@@ -205,6 +247,11 @@ body {
   top: 60vh;
   left: 0;
   transform: translateY(100%);
+}
+.grid-container .five .menu-item:hover div {
+  top: 10%;
+  width: 100%;
+  height: 100%;
 }
 .grid-container .five .folder {
   width: 20vh;
@@ -244,10 +291,6 @@ body {
 }
 .grid-container .seven .menu-item.full-title:hover {
   background-color: transparent;
-  cursor: normal;
-}
-.grid-container .seven .menu-item.full-title img {
-  margin-left: 10px;
 }
 .grid-container .seven .menu-item {
   width: 60vh;
@@ -255,6 +298,9 @@ body {
   transition: transform 0.25s ease-out, color 0.25s ease-out, font-size 0.25s ease-out, background-color 0.25s ease-out;
   top: 0px;
   left: 0px;
+}
+.grid-container .seven .menu-item div {
+  margin: 10px;
 }
 .grid-container .seven .menu-item .title-menu {
   position: absolute;
@@ -264,30 +310,6 @@ body {
   width: 125%;
   font-size: 4.5rem;
   display: none;
-}
-.grid-container .seven .menu-item:hover {
-  background-color: gray;
-  opacity: 0.75;
-  z-index: 3;
-  transition: transform 0.25s ease-out, color 0.25s ease-out, font-size 0.25s ease-out, background-color 0.25s ease-out;
-}
-.grid-container .seven .menu-item:hover div {
-  padding: 0;
-  position: absolute;
-  transform: translate(25%, 25%);
-  transition: transform 0.25s ease-out, color 0.25s ease-out, font-size 0.25s ease-out, background-color 0.25s ease-out;
-  text-shadow: 2px 2px black;
-  color: white;
-  font-size: 2rem;
-  filter: brightness(175%);
-  text-shadow: 3px 2.5px 5px black;
-  z-index: 5;
-  opacity: 1;
-}
-
-.cv-container {
-  margin: 0 auto;
-  width: 200px;
 }
 
 /***********************Media queries********************************/
@@ -393,6 +415,9 @@ body {
     height: 40vw;
     margin-left: -10px;
     margin-top: -10px;
+  }
+  .grid-container .five .folder .menu-item {
+    width: 100%;
   }
   .grid-container .seven.active-menu {
     width: 100vw;
