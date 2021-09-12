@@ -1,5 +1,6 @@
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -14,7 +15,8 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  filter: blur(5px);
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
   z-index: -1;
 }
 
@@ -28,8 +30,10 @@ body {
   color: #001432;
   font-family: "Open Sans Condensed", sans-serif;
   background-color: #8d80ad;
-  filter: invert(100%);
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
 }
+
 .top::before {
   content: "";
   position: absolute;
@@ -39,6 +43,7 @@ body {
   z-index: 50;
   background-color: whitesmoke;
 }
+
 .top h1 {
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 7.5rem;
@@ -48,13 +53,17 @@ body {
   font-weight: bolder;
   left: -22.5px;
   margin: 0;
-  transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
   top: 50%;
 }
 
 .skills-front, .skills-back-tools {
   position: absolute;
+  -webkit-transition: -webkit-transform 0.58s ease-out;
+  transition: -webkit-transform 0.58s ease-out;
   transition: transform 0.58s ease-out;
+  transition: transform 0.58s ease-out, -webkit-transform 0.58s ease-out;
   z-index: -1;
   height: 60vh;
   top: 40vh;
@@ -64,11 +73,15 @@ body {
 .skills-front {
   width: calc((100vw - 85vh)/2);
   left: 0;
-  transform: translate(110%, 0);
+  -webkit-transform: translate(110%, 0);
+          transform: translate(110%, 0);
 }
+
 .skills-front.visible-slide {
-  transform: translate(15px, 0);
+  -webkit-transform: translate(15px, 0);
+          transform: translate(15px, 0);
 }
+
 .skills-front h3 {
   text-align: center;
   font-size: 2rem;
@@ -76,18 +89,26 @@ body {
   color: #cbdad9;
   margin: 0;
 }
+
 .skills-front .front-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-color: rgba(255, 255, 255, 0.25);
-  box-shadow: 0px 25px 45px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 25px 45px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 25px 45px rgba(0, 0, 0, 0.1);
   -webkit-backdrop-filter: blur(5x);
           backdrop-filter: blur(5x);
   border-radius: 10px;
   padding: 10px;
   border: 1px solid whitesmoke;
 }
+
 .skills-front .front-container img {
   width: 5vw;
   margin: 15px;
@@ -96,11 +117,15 @@ body {
 .skills-back-tools {
   width: calc((100vw - 85vh)/2);
   right: 0;
-  transform: translate(-110%, 0);
+  -webkit-transform: translate(-110%, 0);
+          transform: translate(-110%, 0);
 }
+
 .skills-back-tools.visible-slide {
-  transform: translate(-10px, 0);
+  -webkit-transform: translate(-10px, 0);
+          transform: translate(-10px, 0);
 }
+
 .skills-back-tools h3 {
   text-align: center;
   font-size: 2rem;
@@ -108,18 +133,26 @@ body {
   color: #cbdad9;
   margin: 0;
 }
+
 .skills-back-tools .back-container, .skills-back-tools .tools-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-color: rgba(147, 130, 127, 0.75);
   border-radius: 10px;
   padding: 10px;
-  box-shadow: 0px 25px 45px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 25px 45px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 25px 45px rgba(0, 0, 0, 0.1);
   border: 1px solid whitesmoke;
   -webkit-backdrop-filter: blur(5x);
           backdrop-filter: blur(5x);
 }
+
 .skills-back-tools img {
   width: 5vw;
   margin: 15px;
@@ -132,22 +165,28 @@ body {
   position: relative;
   margin: -20vh auto 0;
   overflow: hidden;
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
 }
+
 .grid-container .grid-square {
   background-image: url("./images//portraitnblight.jpg");
   background-repeat: no-repeat;
   background-size: 100vh 100vh;
   border: 10px solid #3D2648;
   position: absolute;
+  -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
   pointer-events: none;
 }
+
 .grid-container .grid-square .folder {
   position: absolute;
   border: 10px solid #3D2648;
   font-family: "Oswald", sans-serif;
   font-size: 2rem;
 }
+
 .grid-container .grid-square .menu-item {
   font-family: "Oswald", sans-serif;
   position: absolute;
@@ -157,24 +196,34 @@ body {
   letter-spacing: 2px;
   font-size: 1.5rem;
   display: none;
+  -webkit-transition: display 0.5s ease-out;
   transition: display 0.5s ease-out;
   width: 100%;
   height: 100%;
 }
+
 .grid-container .grid-square .menu-item:hover {
   background-color: gray;
   opacity: 0.75;
   z-index: 3;
-  transition: transform 0.25s ease-out, color 0.25s ease-out, font-size 0.25s ease-out, background-color 0.25s ease-out;
+  -webkit-transition: color 0.25s ease-out, font-size 0.25s ease-out , background-color 0.25s ease-out, -webkit-transform 0.25s ease-out;
+  transition: color 0.25s ease-out, font-size 0.25s ease-out , background-color 0.25s ease-out, -webkit-transform 0.25s ease-out;
+  transition: transform 0.25s ease-out, color 0.25s ease-out, font-size 0.25s ease-out , background-color 0.25s ease-out;
+  transition: transform 0.25s ease-out, color 0.25s ease-out, font-size 0.25s ease-out , background-color 0.25s ease-out, -webkit-transform 0.25s ease-out;
   top: 0;
   left: 0;
 }
+
 .grid-container .grid-square .menu-item:hover div {
   position: absolute;
-  transition: transform 0.25s ease-out, color 0.25s ease-out, font-size 0.25s ease-out, background-color 0.25s ease-out;
+  -webkit-transition: color 0.25s ease-out, font-size 0.25s ease-out , background-color 0.25s ease-out, -webkit-transform 0.25s ease-out;
+  transition: color 0.25s ease-out, font-size 0.25s ease-out , background-color 0.25s ease-out, -webkit-transform 0.25s ease-out;
+  transition: transform 0.25s ease-out, color 0.25s ease-out, font-size 0.25s ease-out , background-color 0.25s ease-out;
+  transition: transform 0.25s ease-out, color 0.25s ease-out, font-size 0.25s ease-out , background-color 0.25s ease-out, -webkit-transform 0.25s ease-out;
   color: white;
   font-size: 2rem;
-  filter: brightness(175%);
+  -webkit-filter: brightness(175%);
+          filter: brightness(175%);
   text-shadow: 3px 2.5px 5px black;
   z-index: 5;
   opacity: 1;
@@ -182,6 +231,7 @@ body {
   height: 90%;
   padding-left: 10px;
 }
+
 .grid-container .two {
   position: absolute;
   width: 80vh;
@@ -190,9 +240,15 @@ body {
   background-image: none;
   top: 20vh;
   left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-size: calc(2.5rem + 0.5vw);
   font-family: "Open Sans Condensed", sans-serif;
   color: blanchedalmond;
@@ -200,28 +256,69 @@ body {
   font-weight: bold;
   border: none;
 }
+
 .grid-container .two h2 {
   font-variant: small-caps;
   font-family: "Open Sans Condensed", sans-serif;
 }
+
+.grid-container .three.active-menu {
+  width: 100vh;
+  height: 100vh;
+  background-position: 20vh 0vh;
+  top: 40vh;
+  left: 0;
+}
+
 .grid-container .three {
   width: 20vh;
   height: 20vh;
   top: 40vh;
   left: 0px;
   background-position: 0px 0vh;
-  transform: rotateY(90deg);
+  -webkit-transform: rotateY(90deg);
+          transform: rotateY(90deg);
 }
+
 .grid-container .three .folder {
   width: 20vh;
   height: 20vh;
   margin-left: -10px;
   margin-top: -10px;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
 }
-.grid-container .three .menu-item:hover div {
-  top: 5%;
-  left: 7.5%;
+
+.grid-container .three .folder.active-menu {
+  width: 100vh;
+  height: 100vh;
+  border: none;
+  margin: 0;
+  top: 0vh;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
 }
+
+.grid-container .three .menu-item.full-title:hover {
+  background-color: transparent;
+}
+
+.grid-container .three .menu-item {
+  width: calc(20vh-10px);
+  height: 18vh;
+  top: 0px;
+  left: 0px;
+}
+
+.grid-container .three .menu-item .title-menu {
+  top: 100%;
+  left: 20%;
+}
+
+.grid-container .three .menu-item div {
+  margin: 10px;
+}
+
 .grid-container .four {
   width: 60vh;
   height: 40vh;
@@ -231,34 +328,41 @@ body {
   opacity: 0;
   border-right: none;
 }
+
 .grid-container .four .menu-item div {
   margin: 10px;
 }
+
 .grid-container .four .folder {
   width: 80vh;
   height: 40vh;
   margin-left: -10px;
   margin-top: -10px;
 }
+
 .grid-container .five {
   background-position: 0px -20vh;
   width: 20vh;
   height: 40vh;
   top: 60vh;
   left: 0;
-  transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
 }
+
 .grid-container .five .menu-item:hover div {
   top: 10%;
   width: 100%;
   height: 100%;
 }
+
 .grid-container .five .folder {
   width: 20vh;
   height: 40vh;
   margin-left: -10px;
   margin-top: -10px;
 }
+
 .grid-container .seven.active-menu {
   width: 100vh;
   height: 100vh;
@@ -266,15 +370,18 @@ body {
   top: 40vh;
   left: 0;
 }
+
 .grid-container .seven {
   background-position: -20vh -40vh;
   width: 60vh;
   height: 20vh;
   top: 80vh;
   left: 20vh;
-  transform: translateX(-100vh);
+  -webkit-transform: translateX(-100vh);
+          transform: translateX(-100vh);
   border-right: none;
 }
+
 .grid-container .seven .folder.active-menu {
   width: 100vh;
   height: 100vh;
@@ -282,6 +389,7 @@ body {
   margin: 0;
   top: 0vh;
 }
+
 .grid-container .seven .folder {
   border-right: none;
   width: 60vh;
@@ -289,25 +397,31 @@ body {
   margin-left: -10px;
   margin-top: -10px;
 }
+
 .grid-container .seven .menu-item.full-title:hover {
   background-color: transparent;
 }
+
 .grid-container .seven .menu-item {
   width: 60vh;
   height: 18vh;
-  transition: transform 0.25s ease-out, color 0.25s ease-out, font-size 0.25s ease-out, background-color 0.25s ease-out;
   top: 0px;
   left: 0px;
 }
+
 .grid-container .seven .menu-item div {
   margin: 10px;
 }
+
 .grid-container .seven .menu-item .title-menu {
-  position: absolute;
-  margin: 0;
   top: 50%;
   left: 10px;
   width: 125%;
+}
+
+.title-menu {
+  position: absolute;
+  margin: 0;
   font-size: 4.5rem;
   display: none;
 }
@@ -321,12 +435,12 @@ body {
     left: -18px;
     font-size: 5.5rem;
   }
-
   h2 {
     font-size: clamp(2.5rem, 4vw, 4.5rem);
     text-align: center;
   }
 }
+
 @media (max-width: 1024px) {
   .top {
     width: 768px;
@@ -336,7 +450,6 @@ body {
     left: -18px;
     font-size: 5.5rem;
   }
-
   .grid-container {
     width: 80vw;
     height: 100vw;
@@ -350,6 +463,7 @@ body {
     z-index: 2;
     position: absolute;
     border: 10px solid #32213A;
+    -webkit-transition: all 0.25s ease-out;
     transition: all 0.25s ease-out;
   }
   .grid-container .two {
@@ -360,9 +474,15 @@ body {
     background-image: none;
     top: 20vw;
     left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     font-size: calc(2.5rem + 0.5vw);
     font-family: "Open Sans Condensed", sans-serif;
     color: blanchedalmond;
@@ -380,7 +500,8 @@ body {
     top: 40vw;
     left: 0px;
     background-position: 0px 0vw;
-    transform: rotateY(90deg);
+    -webkit-transform: rotateY(90deg);
+            transform: rotateY(90deg);
   }
   .grid-container .three .folder {
     width: 20vw;
@@ -408,7 +529,8 @@ body {
     height: 40vw;
     top: 60vw;
     left: 0;
-    transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
   }
   .grid-container .five .folder {
     width: 20vw;
@@ -431,7 +553,8 @@ body {
     height: 20vw;
     top: 80vw;
     left: 20vw;
-    transform: translateX(-125%);
+    -webkit-transform: translateX(-125%);
+            transform: translateX(-125%);
   }
   .grid-container .seven .folder.active-menu {
     width: 100vw;
@@ -445,4 +568,7 @@ body {
     margin-left: -10px;
     margin-top: -10px;
   }
-}/*# sourceMappingURL=main.css.map */
+}
+
+/************************** CV ***************************/
+/*# sourceMappingURL=main.css.map */

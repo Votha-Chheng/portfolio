@@ -10,11 +10,11 @@ const folderSeven = document.querySelector(".seven .folder")
 const squares = document.querySelectorAll(".grid-square")
 const menuItems = document.querySelectorAll(".menu-item")
 const menuItemsTitleSeven = document.querySelector(".seven .menu-item div")
+const menuItemsTitleThree = document.querySelector(".three .menu-item div")
 const skillsFront = document.querySelector(".skills-front")
 const skillsBackTools = document.querySelector(".skills-back-tools")
 
-console.log(menuItems)
-
+const CV = document.querySelector("#frame-a4")
 
 const tabletSize = window.matchMedia("(max-width:1024px)")
 
@@ -45,10 +45,7 @@ const animateStart = (unit)=>{
 }
 
 window.addEventListener('load', ()=>{
-  setTimeout(()=>{
-    skillsFront.style.display = "block"
-    skillsBackTools.style.display = "block"
-  },5000)
+
   if(tabletSize.matches){
     animateStart('vw')
   } else {
@@ -56,10 +53,7 @@ window.addEventListener('load', ()=>{
   }
 })
 window.addEventListener('resize', ()=>{
-  setTimeout(()=>{
-    skillsFront.style.display = "block"
-    skillsBackTools.style.display = "block"
-  },5000)
+
   if(tabletSize.matches){
     animateStart('vw')
   } else {
@@ -68,24 +62,31 @@ window.addEventListener('resize', ()=>{
 })
 
 let menuSeven = false
-const h2Seven = document.querySelector("h2.title-menu")
+let menuThree= false
+const h2SevenTitleMenu = document.querySelector(".seven h2.title-menu")
+const h2ThreeTitleMenu = document.querySelector(".three h2.title-menu")
 
-menuItems[3].appendChild(h2Seven)
 
+/**************************Sélection du menu technos ********************************/
 squareSeven.addEventListener('click', ()=>{
   menuSeven = !menuSeven
 
   if(menuSeven){
+
+    skillsFront.style.display = "block"
+    skillsBackTools.style.display = "block"
     menuItems[3].classList.add("full-title")
-    h2Seven.style.display="block"
+    h2SevenTitleMenu.style.display="block"
     menuItemsTitleSeven.style.display = "none"
     squareSeven.classList.add("active-menu")
     folderSeven.classList.add("active-menu")
+
+
     setTimeout(()=>{
       skillsFront.classList.add("visible-slide")
       skillsBackTools.classList.add("visible-slide")
-    }, 350)
-  
+    }, 400)
+
     if(tabletSize.matches){
       gsap.to(squareSeven, {backgroundPosition:"0vh -40vw"}, '-=2')
     } else {
@@ -95,12 +96,18 @@ squareSeven.addEventListener('click', ()=>{
   } else {
     skillsFront.classList.remove("visible-slide")
     skillsBackTools.classList.remove("visible-slide")
-    h2Seven.style.display="none"
+    h2SevenTitleMenu.style.display="none"
     menuItemsTitleSeven.style.display = "block"
     squareSeven.classList.remove("active-menu")
+
     setTimeout(()=>{
       folderSeven.classList.remove("active-menu")
     }, 450)
+
+    setTimeout(()=>{
+      skillsFront.style.display = "none"
+      skillsBackTools.style.display = "none"
+    },1000)
 
     if(tabletSize.matches){
       gsap.to(squareSeven, {backgroundPosition:"-20vw -80vw"}, '-=3')
@@ -108,6 +115,53 @@ squareSeven.addEventListener('click', ()=>{
       gsap.to(squareSeven, {backgroundPosition:"-20vh -80vh"}, '-=3')
     }   
   }
+})
+
+/************************** Sélection du menu CV ********************************/
+squareThree.addEventListener('click', ()=>{
+  menuThree = !menuThree
+
+  if(menuThree){
+    squareThree.style.zIndex = "50"
+    menuItems[0].classList.add("full-title")
+    h2ThreeTitleMenu.style.display="block"
+    menuItemsTitleThree.style.display = "none"
+    squareThree.classList.add("active-menu")
+    folderThree.classList.add("active-menu")
+
+    setTimeout(()=>{
+      gridContainer.style.transform = " translate(-40vw, -20vh) scale(0.25)"
+      
+    }, 500)  
+    setTimeout(()=>{
+      CV.style.display = "flex"
+    }, 1100)  
+
+    setTimeout(()=>{
+      
+      CV.style.height = "29.7cm";
+    }, 1200)    
+
+  } else {
+    menuItems[0].classList.remove("full-title")
+    
+    CV.style.height = "0";
+    
+    setTimeout(()=>{
+      CV.style.display = "none"
+      squareThree.style.zIndex = ""
+    }, 750)
+
+    setTimeout(()=>{
+      gridContainer.style.transform = "translate(0,0) scale(1)"
+    }, 1000)
+
+    squareThree.classList.remove("active-menu")
+    folderThree.classList.remove("active-menu")
+    h2ThreeTitleMenu.style.display="none"
+    menuItemsTitleThree.style.display = "block"
+  }
+  
 })
 
 

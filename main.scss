@@ -141,6 +141,7 @@ body{
   position: relative;
   margin: -20vh auto 0;
   overflow: hidden;
+  transition: all 1s ease-out;
  
   .grid-square{
     background-image: url('./images//portraitnblight.jpg');
@@ -219,6 +220,13 @@ body{
       font-family: $font-h1;
     }
   }
+  .three.active-menu{
+    width: 100vh;
+    height: 100vh;
+    background-position: 20vh 0vh;
+    top: 40vh;
+    left: 0;
+  }
   .three{
     width:20vh;
     height: 20vh;
@@ -226,19 +234,41 @@ body{
     left: 0px;
     background-position: 0px 0vh;
     transform: rotateY(90deg);
-
+    
     .folder{
       width:20vh;
       height: 20vh; 
       margin-left: -10px;
       margin-top: -10px;
+      transition: all 0.5s ease-out;
     }
-    .menu-item:hover{
+    .folder.active-menu{
+      width: 100vh;
+      height: 100vh;
+      border: none;
+      margin:0;
+      top: 0vh; 
+      transition: all 0.5s ease-out;
+    }
+    .menu-item.full-title:hover{
+      background-color: transparent;
+    }
+    .menu-item{
+      width:calc(20vh-10px) ;
+      height: 18vh;
+      top:0px;
+      left:0px;
+      
+      .title-menu{
+        top:100%;
+        left: 20%;
+      }
+
       div{
-        top: 5%;
-        left:7.5%;
-      }     
-    }  
+        margin: 10px;
+      }
+    }
+ 
   }
   .four{
     width: 60vh;
@@ -316,14 +346,12 @@ body{
       margin-left: -10px;
       margin-top: -10px; 
     }
-
     .menu-item.full-title:hover{
       background-color: transparent;
     }
     .menu-item{
       width: 60vh;
       height: 18vh;
-      transition: transform 0.25s ease-out, color 0.25s ease-out, font-size 0.25s ease-out , background-color 0.25s ease-out;
       top:0px;
       left:0px;
 
@@ -332,19 +360,22 @@ body{
       }
 
       .title-menu{
-        position: absolute;
-        margin: 0;
         top: 50%;
         left: 10px;
         width: 125%;
-        font-size: 4.5rem;
-        display: none;
-
+        
       }
     }
   }
 
 }
+.title-menu{
+  position: absolute;
+  margin: 0;
+  font-size: 4.5rem;
+  display: none;
+}
+
 
 
 /***********************Media queries********************************/
@@ -498,5 +529,8 @@ body{
     }
   }
 }
+
+/************************** CV ***************************/
+
 
 

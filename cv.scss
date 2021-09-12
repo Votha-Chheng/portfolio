@@ -11,14 +11,29 @@ $font-id : "Oswald", serif;
 body{
     background: radial-gradient(#3A2344, #432A4E);;
 }
+.retour-accueil{
+    position: absolute;
+    left: 20px;
+    width: 160px;
+    height: 120px;
+    background-image: url(./images/portraitnb.jpg);
+    background-size: 200px 200px;
+    background-position: 0px -80px ;
+}
 #frame-a4{
     width: 21cm;
-    height: 29.7cm;
+    height: 0;
     margin: 0px auto;
     background-color: white;
-    padding : 0.2cm 0.1cm 0.2cm 0.45cm;
+    padding : 0.1cm 0.1cm 0.2cm 0.45cm;
     display: flex ;
     overflow: hidden;
+    transition: all 0.8s ease-out;
+    display: none;
+    position: absolute;
+    top: 22vh;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 a{
     color: inherit;
@@ -32,7 +47,6 @@ a{
     }
 }
 main{
-    //padding-right: 12.5px;
     margin-right: 12.5;
     width: 598px;
 
